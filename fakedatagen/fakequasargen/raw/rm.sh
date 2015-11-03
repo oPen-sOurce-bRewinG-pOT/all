@@ -1,0 +1,16 @@
+rm fits/1/.DS_Store
+rm fits/2/.DS_Store
+rm fits/3/.DS_Store
+rm fits/4/.DS_Store
+rm fits/5/.DS_Store
+rm fits/6/.DS_Store
+rm fits/7/.DS_Store
+rm fits/8/.DS_Store
+rm fits/9/.DS_Store
+rm fits/10/.DS_Store
+rm fits/11/.DS_Store
+rm fits/12/.DS_Store
+rm fits/13/.DS_Store
+rm fits/14/.DS_Store
+rm fits/15/.DS_Store
+rm fits/16/.DS_Store

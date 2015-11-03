@@ -1,0 +1,112 @@
+LogBook_Pr2_RC
+
+In [1]: import varqso
+
+In [2]: v=varqso.VarQso('3C273R.fits',band='r')
+
+In [3]: v.fit('r','DRW')
+Optimization terminated successfully.
+         Current function value: -798.042668
+         Iterations: 4
+         Function evaluations: 115
+Out[3]: {'loga2': array([-6.01657091]), 'logl': array([-3.65644598])}
+
+
+In [7]: v=varqso.VarQso('0208-512_5drsJ.fits',band='z')
+
+In [8]: v.fit('z','DRW')
+Optimization terminated successfully.
+         Current function value: 69.774470
+         Iterations: 6
+         Function evaluations: 174
+Out[8]: {'loga2': array([-0.49461859]), 'logl': array([-1.69091095])}
+
+To check FITS file columns:
+
+idl > a=mrdfits('input.fits',1,hdr1)
+If success,
+idl > help, a,/str
+
+This will show the column names. We need mjd_"" for the bands.
+
+Wed Jul 29, 03:30
+
+In [1]: import varqso
+
+In [3]: v=varqso.VarQso('/Users/sunip/Codes/RC/git_rit1/data/s82qsos/SDSSJ030559.22-003617.1.fit',band='r')
+
+In [4]: v.fit('r','DRW')Optimization terminated successfully.
+         Current function value: -108.504969
+         Iterations: 5
+         Function evaluations: 127
+Out[4]: {'loga2': array([-5.71286973]), 'logl': array([-4.18560396])}
+
+In [5]: v=varqso.VarQso('/Users/sunip/Codes/RC/git_rit1/data/s82qsos/SDSSJ030559.22-003617.1.fit',band='z')
+
+In [6]: v.fit('z','DRW')Optimization terminated successfully.
+         Current function value: -71.318218
+         Iterations: 4
+         Function evaluations: 106
+Out[6]: {'loga2': array([-5.50636032]), 'logl': array([ 1.23615739])}
+
+In [8]: v=varqso.VarQso('/Users/sunip/Codes/RC/git_rit1/data/s82qsos/SDSSJ030559.22-003617.1.fit',band='g')
+
+In [9]: v.fit('g','DRW')Optimization terminated successfully.
+         Current function value: -103.351070
+         Iterations: 5
+         Function evaluations: 127
+Out[9]: {'loga2': array([-5.07627839]), 'logl': array([-3.18324884])}
+
+In [10]: v=varqso.VarQso('/Users/sunip/Codes/RC/git_rit1/data/s82qsos/SDSSJ030559.22-003617.1.fit',band='i')
+
+In [11]: v.fit('i','DRW')Optimization terminated successfully.
+         Current function value: -97.222974
+         Iterations: 3
+         Function evaluations: 75
+Out[11]: {'loga2': array([-5.27934295]), 'logl': array([-4.20682046])}
+
+IDL Info on the fits file: 
+
+IDL> a=mrdfits('SDSSJ030559.22-003617.1.fit',1,hdr1)
+
+MRDFITS: Binary table.  24 columns by  82 rows.
+IDL> help,a,/str
+** Structure <2acc604>, 24 tags, length=156, data length=155, refs=1:
+   OBJID           LONG64       8658181404377546900
+   RUN             INT           2589
+   RERUN           INT             40
+   CAMCOL          BYTE         2
+   FIELD           INT            209
+   OBJ             INT            148
+   TYPE            INT              6
+   RA              DOUBLE           46.496780
+   DEC             DOUBLE         -0.60476145
+   U               DOUBLE           20.117266
+   G               DOUBLE           19.783144
+   R               DOUBLE           19.436188
+   I               DOUBLE           19.374477
+   Z               DOUBLE           19.426052
+   ERR_U           DOUBLE         0.086378761
+   ERR_G           DOUBLE         0.019749761
+   ERR_R           DOUBLE         0.020304829
+   ERR_I           DOUBLE         0.023721168
+   ERR_Z           DOUBLE         0.089860722
+   MJD_U           DOUBLE           52173.363
+   MJD_G           DOUBLE           52173.364                
+   MJD_R           DOUBLE           52173.361
+   MJD_I           DOUBLE           52173.362
+   MJD_Z           DOUBLE           52173.364
+   
+Wed Jul 29, 17:29
+
+Batch run successfully on all files.
+
+#########################################
+Scalings:  Log sigma = (Ln a + Ln 10)/Ln 10
+	   Log tau = (Ln L + Ln (365.25))/Ln 10
+#########################################
+
+Sat Aug 01, 14:14
+
+
+

@@ -1,0 +1,1 @@
+do for [ii=1:100000:100]{splot "lorenz.dat" u 2:3:4 every ::1::ii w l ls 1 lc 2 title "Trajectory", "lorenz.dat" u 2:3:4 every ::ii::ii w p pt 7 ps 1 lc 4 title "Particle"}

@@ -1,0 +1,18 @@
+set logscale xy
+set grid
+set yrange [0.75:1.1]
+set title "Data Collapse of FRP vs. T_max"
+set xlabel "(1.68347/P_act)*T_max"
+set ylabel "FRP"
+plot "Laziness_0.0sc.dat" w p lc 0 title "Laziness=0.0"
+replot "Laziness_0.2sc.dat" w p lc 0 title "Laziness=0.2"
+replot "Laziness_0.4sc.dat" w p lc 0 title "Laziness=0.4" 
+replot "Laziness_0.6sc.dat" w p lc 0 title "Laziness=0.6"  
+replot "Laziness_0.8sc.dat" w p lc 0 title "Laziness=0.8"  
+replot (1-1/sqrt(x)) lt 3 lc 0 notitle
+#replot (0*x+1) lt 5 lc 0 notitle
+set term postscript
+set output "frp_scaled.eps"
+replot
+unset output
+pause -1

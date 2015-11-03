@@ -1,0 +1,666 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,color,tikz,graphicx,fixltx2e,float,enumerate}
+
+\setlength{\baselineskip}{16.0pt}    % 16 pt usual spacing between lines
+
+\setlength{\parskip}{3pt plus 2pt}
+\setlength{\parindent}{20pt}
+\setlength{\oddsidemargin}{0.5cm}
+\setlength{\evensidemargin}{0.5cm}
+\setlength{\marginparsep}{0.75cm}
+\setlength{\marginparwidth}{2.5cm}
+\setlength{\marginparpush}{1.0cm}
+\setlength{\textwidth}{150mm}
+\newcommand\half{\frac{1}{2}}
+\newcommand\thalf{\frac{3}{2}}
+\newcommand\lr{\left \langle}
+\newcommand\rr{\right \rangle}
+\newcommand\ls{\left |}
+\newcommand\rs{\right |}
+\newcommand\hs{\hat{S}}
+%\newcommand{\hs_}[1]{\hat{S}_{#1}}
+\newcommand\ua{\uparrow}
+\newcommand\da{\downarrow}
+\newcommand\hhalf{\frac{\hbar}{2}}
+\title{Understanding Product Space}
+\author{Dr. Suchetana Chatterjee}
+
+\begin{document}
+\maketitle
+\textbf{Problem:} Two spin ${1}\over{2}$ partices at fixed locations in space interact with each other, and a magnetic field $\vec{B}$. When the field is turned off, the interaction between the spins is: $$\begin{aligned}
+\hat{H}_0 &= {{4 E_0}\over {\hbar}} \vec{S_1}\cdot \vec{S_2}, \\
+&= {{2 E_0}\over{\hbar}} \left(S^2-S_1^2-S_2^2\right).
+\end{aligned}$$
+In presence of magnetic field which intercts strongly with each spin,
+$$
+H'=\mu (\vec{S_1}\cdot \vec{B} + \vec{S_2} \cdot \vec{B}).
+$$
+\begin{enumerate}[a)]
+\item Write down a basis for the vector space of states of this two-particle system. State which labels you are using to identfy your basis states.
+\item How does one express the Hamiltonian for $\hat{H}_0$, for the basis you have chosen? (Write down a $n \times n$ matrix.)
+\item How does one express (in the basis you have chosen) the perturbing Hamiltonian $H'$? \\
+\end{enumerate}
+\begin{enumerate}[1.]
+\item Consider one spin ${1}\over{2}$ particle. What is the dimensionality of the associated vector space of that system?
+       \begin{enumerate}[I.]
+              \item 1-dimensional.
+              \item 2-dimensional.
+              \item Infinite dimensional.
+              \item Finite dimensional with random dimensionality.
+       \end{enumerate}
+\newpage
+\textbf{Ans.} The answer is option \textbf{II.} because the dimension of the vector space associated with a spin $n$ particle is $2n+1$. Here the particle has spin $n={{1}\over{2}}$, hence the dimensionality is $2\cdot {{1}\over{2}}+1=2$.
+\item How many linearly independent vectors do you need to represent any state in the 2-dimensional vector space?
+       \begin{enumerate}[I.]
+              \item 2.
+              \item 1.
+              \item 4. %I think at least 2 and at most 4 are better options.
+              \item 6.
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{II.} because we need exactly $n$ linearly independent vectors to represent any state in a $n$-dimensional vector space. The vectors that are used to express any state in that vector space are called `basis vectors'. We can choose any two linearly independent vectors as out basis vectors, but when dealing with quantum mechanics, it is advisable and wise to choose eigenstates of the observable we are measuring as the basis vectors.
+
+\item Suppose we have only one spin $\frac{1}{2}$ particle with $H=+\frac{e}{m} S_z B_z$. What do you think would be a good basis to express this Hamiltonian, in which it is diagonal?
+       \begin{enumerate}[I.]
+              \item The eigenstates of $\hat{S}$.
+              \item The eigenstates of $\hat{S_z}$.
+              \item The eigenstates of $\hat{S_+}$.
+              \item Something else. \newline
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{II.} because the Hamiltonian is simply a multiple of the $S_z$ operator: $$H=\left(+\frac{e}{m} B_z\right) \hat{S_z}.$$ Here we are essentially measuring $\hat{S_z}$, and so the eigenstates of $\hat{S_z}$ would be a decent choice as basis vectors. Since $\hat{S_z}$ is diagonal in this basis, the Hamiltonian is also diagonal in this basis as required. \\
+\newpage
+\textbf{C}onsider the conversation between Suman and Sanskriti. \\
+\textbf{Suman}: Hey, given a Hamiltonian $\hat{H}_0=A(S^2-S_z^2)$, a good choice of basis vectors would be the eigenstates of $\hat{S}^2$, right? \\
+\textbf{Sanskriti}: No, Suman! Good basis vectors should be \emph{simultaneous} eigenstates of both $\hat{S}^2$ and $\hat{S_z}$. \\
+Explain why you agree or disagree with either of them. \\
+\newline
+\textbf{Ans.} Sanskriti is correct, because we typically prefer to choose such a basis that the Hamiltonian becomes diagonal in that basis. Since the Hamiltonian is a linear combination of $\hat{S}^2$ and $\hat{S_z}^2$, we would look for such bases that makes both these operators diagonal, which would implies that the Hamiltonian is also diagonal. The simultaneous eigenstates of $\hat{S_z}$ and $\hat{S}^2$ are a good place to start, because in this choice of basis, both $\hat{S_z}^2$ and $\hat{S}^2$ are diagonal. Had we chosen the basis as $\frac{1}{\sqrt{2}}\left(\left|\uparrow \right \rangle \pm \left | \downarrow \right \rangle \right)$, which are eigenstates of $\hat{S}^2$, we could have obtained a representation of the Hamiltonian. But this would not have been diagonal, as these vectors are NOT eigenstates of $\hat{S_z}$. \\
+\newline
+\item For the Hamiltonian $\hat{H}_0=A(S^2-S_z^2)$, which among the following are not wise choice(s) as basis vectors? Explain. %My own modification
+       \begin{enumerate}[I.]
+              \item $\left | s, m_z \right \rangle$, where $s$ is the total spin quantum number and $m_i$ is the $i$ component of it.
+              \item $\left | s, m_x \right \rangle$,
+              \item $\left | m_x, m_y, m_z \right \rangle$,
+              \item $\left | s \right \rangle.$ \\
+              \newline
+       \end{enumerate}
+\textbf{Ans.} All except \textbf{I.} are not wise (or sometimes even possible) choices for basis vectors. For the state $\left | s, m_x \right \rangle$ is not a simultaneous eigenstate of $\hat{S_z}$ operator though it is an eigenstate of the $\hat{S}^2$ operator, the Hamiltonian would not be diagonal in this basis. Choice \textbf{III.} is an impossible choice, because the uncertainty principle does not allow us to specify all three components of spin simultaneously (as it is impossible to construct simultaneous eigenstates of $\hat{S_x}$, $\hat{S_y}$, $\hat{S_z}$ operators, for the commutator bracket of any two of them is non zero). Choice \textbf{IV.} does not contain enough information to be an eigenstate of the $\hat{S_z}$ operator.
+\newpage
+\textbf{Notations 101:} \\
+For a spin $\frac{1}{2}$, $s=\frac{1}{2}$ and $m_z=\pm \frac{1}{2}$. So, the basis vectors $\left | s, m_z \right \rangle $ are, $\left | \frac{1}{2}, \pm \frac{1}{2} \right \rangle$. Now, for a spin $\frac{1}{2}$ particle, $s$ is fixed. So, we simplify our notation to write $\left | \frac{1}{2}, \pm \frac{1}{2} \right \rangle$ as $\left | \pm \frac {1} {2} \right \rangle$, or equivalently, $$ \begin{aligned} & \left | + \frac {1} {2} \right \rangle = \left | \uparrow \right \rangle _z, \\ & \left | - \frac {1} {2} \right \rangle = \left | \downarrow \right \rangle _z. \end{aligned} $$
+These vectors are simultaneous eigenstates of $\hat{S}^2$ and $\hat{S_z}$, and the eigenvalues are:
+$$
+\begin{aligned}
+       & \hat{S_z} \left | \uparrow \right \rangle _z = + \frac{\hbar}{2} \left | \uparrow \right \rangle _z, \\
+       & \hat{S_z} \left | \downarrow \right \rangle _z = -\frac{\hbar}{2} \left | \downarrow \right \rangle _z.
+\end{aligned}
+$$
+$$
+\begin{aligned}
+       & \hat{S}^2 \left | \uparrow \right \rangle _z = \hbar^2 s(s+1) \left | \uparrow \right \rangle _z  = \frac{3 \hbar^2}{4} \left | \uparrow \right \rangle _z, \\
+       & \hat{S}^2 \left | \downarrow \right \rangle _z = \hbar^2 s(s+1) \left | \downarrow \right \rangle _z  = \frac{3 \hbar^2}{4} \left | \downarrow \right \rangle _z.
+\end{aligned}
+$$ 
+Any observable can be represented as a linear Hermitian operator in a linear vector space. You can represent the operator in your chosen basis as a square matrix with the dimension determined by the dimension of the linear vector space you are working in. \\
+\newline
+\item {Can you represent $\hat{S_z}$ in the basis you have chosen in the 4$^{th}$ question? \newline [Hint: It will be a $2 \times 2$ matrix.]} \newline
+       \begin{enumerate}[I.]
+              \item $\frac{\hbar}{2} \left ( \begin{array}{cc}
+                                                 0 & 1 \\
+                                                 0 & 0 \\
+                                          \end{array} \right).$
+              \item $\frac{\hbar}{2} \left ( \begin{array}{cc}
+                                                 1 & 0 \\
+                                                 0 & 1 \\
+                                          \end{array} \right).$
+              \item $\frac{\hbar}{2} \left ( \begin{array}{rr}
+                                                 0 & 1 \\
+                                                 -1 & 0 \\
+                                          \end{array} \right).$
+              \item $\frac{\hbar}{2} \left ( \begin{array}{rr}
+                                                 1 & 0 \\
+                                                 0 & -1 \\
+                                          \end{array} \right).$
+       \end{enumerate}
+\newpage
+\textbf{Ans.} Let us observe how we can construct the matrix, step by step.
+       \begin{enumerate}[(a)]
+              \item A corresponding matrix element can be calculated in the following way: $ \left \langle s, m_z ^{\vphantom'} \right| \hat{S_z} \left | s, m_z ^{'} \right \rangle $ gives all the matrix elements for all possible combinations of $m_z$ and $m_z^{'}$. \newline
+              In our case of spin $\frac{1}{2}$ particles, $s=\frac{1}{2}$ and $m_z=\pm \frac{1}{2}$.
+              \item We construct the following table:
+                     $$
+                            \begin{array}{c|cc}
+                                   \phantom{\left | \uparrow \right \rangle _z} & \left | \uparrow \right \rangle _z & \left | \downarrow \right \rangle _z \\
+                                   \hline
+                                   \left | \uparrow \right \rangle _z & \phantom{\left | \uparrow \right \rangle _z} & \phantom{\left | \uparrow \right \rangle _z} \\
+                                   \phantom{\left | \uparrow \right \rangle _z} & \phantom{\left | \uparrow \right \rangle _z} & \phantom{\left | \uparrow \right \rangle _z} \\
+                                   \left | \downarrow \right \rangle _z & \phantom{\left | \uparrow \right \rangle _z} & \phantom{\left | \uparrow \right \rangle _z} \\
+                            \end{array}
+                     $$
+              \item We compute the following numbers: \newline
+                     \begin{enumerate}[i.]
+                            \item $\left \langle \uparrow \vphantom{\hat{S_z}} \right | \hat{S_z} \left | \vphantom{\hat{S_z}} \uparrow  \right \rangle = 
+                            \left \langle \uparrow \vphantom{\frac{\hbar}{2}} \right | \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow  \right \rangle =
+                            \frac{\hbar}{2}\left \langle \uparrow \vphantom{1} \right | \left. \uparrow \right \rangle = \frac{\hbar}{2} $, as the states are normalized. Similarly,
+                            \item $\left \langle \downarrow \vphantom{\hat{S_z}} \right | \hat{S_z} \left | \vphantom{\hat{S_z}} \downarrow  \right \rangle = -\frac{\hbar}{2}$.
+                            \item $\left \langle \uparrow \vphantom{\hat{S_z}} \right | \hat{S_z} \left | \vphantom{\hat{S_z}} \downarrow  \right \rangle = \left \langle \uparrow \vphantom{\frac{\hbar}{2}} \right | -\frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \downarrow  \right \rangle = -\frac{\hbar}{2}\left \langle \uparrow \vphantom{1} \right | \left. \downarrow \right \rangle = 0$, since the states are orthogonal. Similarly,
+                            \item $\left \langle \downarrow \vphantom{\hat{S_z}} \right | \hat{S_z} \left | \vphantom{\hat{S_z}} \uparrow  \right \rangle = 0$.
+
+                     \end{enumerate} 
+              \item So finally we construct the matrix:
+                     $$
+                            \begin{aligned}
+                                   \hat{S_z} & = \left( \begin{array}{lr}
+                                                 \frac{\hbar}{2} & 0 \\
+                                                 0 & -\frac{\hbar}{2} \\
+                                                 \end{array} \right), \\
+                                          & = \frac{\hbar}{2} \left( \begin{array}{lr}
+                                                 1 & 0 \\
+                                                 0 & -1 \\
+                                                 \end{array} \right).
+                            \end{aligned}
+                     $$
+       \end{enumerate}
+       Therefore, the correct answer is \textbf{IV.} %\\ \newline
+       \newpage
+\textbf{C}onsider the following conversation between Suman and Sanskriti: \newline
+\textbf{Suman:} Hey Sanskriti! Could you solve the problem in Dr. Chatterjee's exam today? \newline
+\textbf{Sanskriti:} Which one? The one with the two spin $\frac{1}{2}$ particles? \newline
+\textbf{Suman:} Yep that's the one! She asked us to write the basis vectors. Don't you think there will be $2$ basis vectors, since the vector space is two dimensional for the spin-half particles, and the same operator acts on the spin state of both the particles? \newline
+\textbf{Sanskriti:} No, Suman! The vector spaces for the spin of two particles are two completely independent spaces. Operators belonging to one space should not produce any effect on the vectors (states) of the other space. So I reckon it's useful to put labels on the states, and also the operators to differentiate them from one another, and operators with some label should act \emph{only} on the vectors (states) with the same label! \newline
+Explain with whom you agree, and why. \\ \newline
+\textbf{Ans.} Sanskriti is correct. The vector spaces are independent of each other, so the same operator should not work on both the particles. In that case, $\hat{S}_{1z}$ is an operator in the vector space of the first particle only, and hence can act only on the first particle, and $\hat{S}_{2z}$ is an operator in the vector space of the second particle. The combined space of the two spins is called the \emph{product space}, and is denoted by $ 1 \otimes 2$. 
+\item What is the dimensionality of the product space of two spin $\frac{1}{2}$ particles?
+       \begin{enumerate}[I.]
+              \item 2.
+              \item $2+2=4$.
+              \item $2 \times 2 = 4$.
+              \item Anything between 2 and 4.
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{III}, because the dimension of the product space of $n$ vector spaces, each with dimension $m$ is $m^n$. In this case, we have 2 vector spaces for each of the spin $\frac{1}{2}$ particles, and each space is of dimension 2. Hence, the product space has dimension $2^2=2\times 2=4$.
+\newpage
+\item How many basis vectors do you need in this product space to represent any vector?
+       \begin{enumerate}[I.]
+              \item 4.
+              \item Infinite.
+              \item 2.
+              \item None of the above.
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{II}.
+\item Which of the following can be the basis vectors for the product space?
+       \begin{enumerate}[I.]
+              \item $\left | s_1, m_{1z} \right \rangle + \left | s_2, m_{2z} \right \rangle$.
+              \item $\left | s_1, m_{1z} \right \rangle -\left | s_2, m_{2z} \right \rangle$.
+              \item $\left | s_1, m_{1z} \right \rangle \otimes \left | s_2, m_{2z} \right \rangle$.
+              \item None of the above. \newline
+       \end{enumerate}  
+\textbf{Ans.} The answer is \textbf{III}, as combinations \textbf{I} and \textbf{II} can not produce four linearly independent vectors, whereas $\left | s_1, m_{1z} \right \rangle \otimes \left | s_2, m_{2z} \right \rangle$ produces four linearly independent vectors. We can represent the vectors by $\left | s_1, s_2, m_{1z}, m_{2z} \right \rangle$, and these vectors are simultaneous eigenstates of $\hat{S}_1^2$, $\hat{S}_2^2$, $\hat{S}_{1z}$ and $\hat{S}_{2z}$. \\ \newline
+\textbf{Notation 101:} Since $s_1$ and $s_2$ are fixed, it is sufficient to denote the basis vectors as $\left | m_{1z}, m_{2z} \right \rangle $, where 1 is the label of the first particle and 2 is the label for the second particle. In an even more compact notation, we shall drop the labels. \\ \newline
+\item Now if $\left | \uparrow \right \rangle _z$ and $\left | \downarrow \right \rangle _z$ denotes the up-spin and down-spin respectively for a spin-half system, can you identify the basis vectors for the product space of two such particles?
+       \begin{enumerate}[I.]
+              \item $\left | \uparrow \uparrow \right \rangle _z$ $\left | \downarrow \downarrow \right \rangle _z$ $\left | \uparrow \uparrow \right \rangle _z$ $\left | \downarrow \downarrow \right \rangle _z$,
+              \item $\left | \downarrow \uparrow \right \rangle _z$ $\left | \uparrow \downarrow \right \rangle _z$ $\left | \uparrow \uparrow \right \rangle _z$ $\left | \downarrow \downarrow \right \rangle _z$,
+              \item $\left | \downarrow \uparrow \right \rangle _z$ $\left | \downarrow \downarrow \right \rangle _z$ $\left | \uparrow \uparrow \right \rangle _z$,
+              \item None of the above.
+       \end{enumerate}
+\newpage
+\textbf{Ans.} The answer is \textbf{II}, since there can be four distinct and linearly independent (that is, any one can not be written using the others) basis vectors in a four dimensional vector space.
+\item In the chosen basis how will you represent $\hat{H}^{'}=\mu \left(\vec{S}_1 + \vec{S}_2 \right)\cdot \vec{B}$? \newline
+[Always take the direction of the magnetic field to be in the direction of the z-axis, so that $\hat{H}^{'}=\mu \left(\vec{S}_1 + \vec{S}_2 \right)\cdot \vec{B}=\mu \left(\hat{S}_{1z}+\hat{S}_{2z}\right)B=\mu B \hat{S}_z $. So, you shall need to express $\hat{S}_z$ in your basis.]\newline
+[\textbf{Hint:} $\hat{S}_{1z} \left|m_{1z}, m_{2z} \right \rangle = m_{1z}\frac{\hbar}{2}\left|m_{1z},m_{2z} \right \rangle$, $\hat{S}_{2z} \left|m_{1z}, m_{2z} \right \rangle = m_{2z}\frac{\hbar}{2}\left|m_{1z},m_{2z} \right \rangle$ ]
+       \begin{enumerate}[I.]
+              \item $\mu B \frac{\hbar}{2} \left(\begin{array}{lr}
+                                                 1 & 0 \\
+                                                 0 & -1 \\
+                                                 \end{array} \right)$.
+              \item $ \mu B \hbar \left(\begin{array}{lr}
+                                                 1 & 0 \\
+                                                 0 & -1 \\
+                                                 \end{array} \right)$.
+              \item $ \mu B \frac{\hbar}{2} \left(\begin{array}{lrrr}
+                                                        1 & 0 & 0 & 0 \\
+                                                        0 & 0 & -1 & 0 \\
+                                                        0 & 2 & 0 & 0 \\
+                                                        0 & \hphantom{-}0 & 0 & \hphantom{-}2 \\
+                                                        \end{array} \right)$.
+              \item $ \mu B \hbar \left(\begin{array}{crrr}
+                                          1 & 0 & 0 & 0 \\
+                                          0 & 0 & 0 & 0 \\
+                                          0 & 0 & 0 & 0 \\
+                                          0 & \hphantom{-}0 & \hphantom{-}0 & -1 \\
+                                          \end{array}\right).$ \\ \newline
+       \end{enumerate} 
+\textbf{Ans.} We shall construct it in the same way it was done for the spin-half particle. First we evaluate the matrix elements:
+$$
+\begin{aligned}
+\left \langle \uparrow \uparrow \right | \hat{S}_z \left | \uparrow \uparrow \right \rangle & = \left \langle \uparrow \uparrow \right | \hat{S}_{1z} + \hat{S}_{2z} \left | \uparrow \uparrow \right \rangle \\
+& = \left \langle \uparrow \uparrow \vphantom{\frac{\hbar}{2}} \right | \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow \uparrow \right \rangle + \left \langle \uparrow \uparrow \vphantom{\frac{\hbar}{2}} \right | \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow \uparrow \right \rangle \\
+& = \hbar, \quad \mbox{since the states are normalized.} \\
+\left \langle \uparrow \uparrow \right | \hat{S}_z \left | \uparrow \downarrow \right \rangle & = \left \langle \uparrow \uparrow \right | \hat{S}_{1z} + \hat{S}_{2z} \left | \uparrow \downarrow \right \rangle \\
+& = \left \langle \uparrow \uparrow \vphantom{\frac{\hbar}{2}} \right | \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow \downarrow \right \rangle + \left \langle \uparrow \uparrow \vphantom{\frac{\hbar}{2}} \right | - \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow \downarrow \right \rangle \\
+& = 0 + 0, \quad \mbox{since the states are orthonormal.}
+\end{aligned}
+$$                                
+\newpage
+Similarly, by orthonormality, all other off-diagonal terms are zero.
+$$
+\begin{aligned}
+\left \langle \uparrow \downarrow \right | \hat{S}_z \left | \uparrow \downarrow \right \rangle & = \left \langle \uparrow \downarrow \right | \hat{S}_{1z} + \hat{S}_{2z} \left | \uparrow \downarrow \right \rangle \\
+& = \left \langle \uparrow \downarrow \vphantom{\frac{\hbar}{2}} \right | \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow \downarrow \right \rangle + \left \langle \uparrow \downarrow \vphantom{\frac{\hbar}{2}} \right | - \frac{\hbar}{2} \left | \vphantom{\frac{\hbar}{2}} \uparrow \downarrow \right \rangle \\
+& = \frac{\hbar}{2} - \frac{\hbar}{2} = 0, \quad \mbox{since the states are normalized.}
+\end{aligned}
+$$
+Similarly, $\left \langle \downarrow \uparrow \right | \hat{S}_z \left | \downarrow \uparrow \right \rangle = 0$, and $\left \langle \downarrow \downarrow \right | \hat{S}_z \left | \downarrow \downarrow \right \rangle = -\hbar$. \newline
+Hence, the representation of $H^{'}$ will be:
+$$
+\mu B \hbar \left(\begin{array}{crrr}
+                                          1 & 0 & 0 & 0 \\
+                                          0 & 0 & 0 & 0 \\
+                                          0 & 0 & 0 & 0 \\
+                                          0 & \hphantom{-}0 & \hphantom{-}0 & -1 \\
+                                          \end{array}\right).
+$$
+\phantom{I am Sunip!} \\ \newline
+\item If the order for the basis vectors is changed to $ \left | \uparrow \uparrow \right \rangle _z$ $ \left | \downarrow \downarrow \right \rangle _z$ $ \left | \downarrow \uparrow \right \rangle _z$ $ \left | \uparrow \downarrow \right \rangle _z$, what will be the matrix representation of the Hamiltonian?
+       \begin{enumerate}[I.]
+              \item It will remain the same.
+              \item Some off-diagonal elements will be present.
+              \item It will be $\mu B \hbar \left(\begin{array}{crrr}
+                                          0 & 0 & 0 & 0 \\
+                                          0 & 1 & 0 & 0 \\
+                                          0 & 0 & 0 & 0 \\
+                                          0 & \hphantom{-}0 & \hphantom{-}0 & -1 \\
+                                          \end{array}\right).$
+              \item It will be $\mu B \hbar \left(\begin{array}{crrr}
+                                          1 & 0 & 0 & 0 \\
+                                          0 & -1 & 0 & 0 \\
+                                          0 & 0 & 0 & 0 \\
+                                          0 & \hphantom{-}0 & \hphantom{-}0 & \hphantom{-}0 \\
+                                          \end{array}\right).$
+       \end{enumerate} 
+       \newpage
+\textbf{Ans.} The correct answer is \textbf{IV} because you can see that the $H_{22}^{'}$ element will now be $-\hbar$ and the other elements will be zero. The type of matrix you get by this method is in a block diagonal form. It is always advisable to keep matrices in block diagonal form, as they are easier to deal with. \\ \newline
+\item In the above basis, construct the unperturbed hamiltonian $\hat{H}_0 = \frac{4 E_0}{\hbar ^2} \vec{S}_1 \cdot \vec{S}_2$. \newline
+[\textbf{Hint:} $\vec{S}_1 \cdot \vec{S}_2 = S_{1x}S_{2x}+S_{1y}S_{2y}+S_{1z}S_{2z}$, and $S_x=\frac{S_{+} + S_{-}}{2}$, $S_y=\frac{S_{+} - S_{-}}{2i}$.]
+       \begin{enumerate}[I.]
+              \item $E_0 \left( \begin{array}{cccc}
+                            1 & 0 & 0 & 0 \\
+                            0 & 1 & 0 & 0 \\
+                            0 & 0 & 1 & 0 \\
+                            0 & 0 & 0 & 1 \\
+                            \end{array}\right)$.
+              \item $E_0 \left( \begin{array}{crrr}
+                                   1 & 0 & 0 & 0 \\
+                                   0 & -1 & 0 & 0 \\
+                                   0 & 0 & -1 & 0 \\
+                                   0 & 0 & 0 & \hphantom{-}1 \\
+                                   \end{array}\right)$.
+              \item $E_0 \left( \begin{array}{crrr}
+                                   1& 0 & 0 & 0 \\
+                                   0 & -1 & 2 & 0 \\
+                                   0 & 2 & -1 & 0 \\
+                                   0 & 0 & 0 & \hphantom{-}1 \\
+                                   \end{array}\right)$.
+              \item $2 E_0 \left( \begin{array}{cccc}
+                            1 & 0 & 0 & 0 \\
+                            0 & 0 & 0 & 0 \\
+                            0 & 0 & 0 & 0 \\
+                            0 & 0 & 0 & 1 \\
+                            \end{array}\right)$. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} First we write the Hamiltonian in terms on the ladder operators:
+$$\begin{aligned}
+\hat{H}_0 & = \frac{4 E_0}{\hbar ^2} \left[\frac{S_{1+} + S_{1-}}{2}\cdot \frac{S_{2+} + S_{2-}}{2} + \frac{S_{1+} - S_{1-}}{2i} \cdot \frac{S_{2+} - S_{2-}}{2i} + S_{1z}S_{2z}\right] \\
+& = \frac{E_0}{\hbar^2}\left[S_{1+}S_{2+}+S_{1+}S_{2-}+S_{1-}S_{2+}+S_{1-}S_{2-} - \left( S_{1+}S_{2+}-S_{1+}S_{2-}-S_{1-}S_{2+}+S_{1-}+S_{2-} \right) \right. \\ & \hphantom{=} \left. + 4 S_{1z}S_{2z}\right] \\
+& = \frac{2 E_0}{\hbar^2} \left[S_{1+}S_{2-} + S_{1-}S_{2+} + 2 S_{1z}S_{2z}\right]
+\end{aligned}
+$$
+\newpage
+So, we now calculate the matrix elements for this operator, and to do that we first have to know how the ladder operators act on the states.
+       \begin{enumerate}[a.]
+              \item Operators with label $1$ acts on states with label $1$ only, and the same for the other operators.
+              \item $\hat{S}_{+} \left | \uparrow \right \rangle _z = 0$, \phantom{Hello!W} $\hat{S}_{+} \left | \downarrow \right \rangle _z = \hbar \left | \uparrow \right \rangle _z$, \newline
+              $\hat{S}_{-} \left | \uparrow \right \rangle _z = \hbar \left | \downarrow \right \rangle$, \phantom{Hello!} $\hat{S}_{-} \left | \downarrow \right \rangle _z = 0$.
+              \item Remember that when we denote a state by say $\left | \uparrow \downarrow \right \rangle _z$, the first arrow is for the state of the first particle and the second arrow is for the state of the second particle.
+       \end{enumerate}
+       With these points in mind, we calculate the following:
+       $$
+       \begin{aligned}
+             & \hphantom{=} \left \langle \downarrow \uparrow \right | \hat{S}_{1+} \hat{S}_{2-} \left | \downarrow \uparrow \right \rangle _z  \\
+              & = \left \langle \downarrow \uparrow \right | \hat{S}_{1+} \hbar \left | \downarrow \downarrow \right \rangle _z , \quad S_{2-}\mbox{ operates on }\left|\uparrow \right \rangle _{2z}. \\
+              &= \hbar \left \langle \downarrow \uparrow \right | \hat{S}_{1+} \left | \downarrow \downarrow \right \rangle _z  \\
+              & = \hbar^2 \left \langle \downarrow \uparrow \vphantom{.}\right  | \left. \uparrow \downarrow \right \rangle _z  \\
+              & = 0, \quad \mbox{since the states are orthonormal.}
+        \end{aligned}
+       $$
+       $$
+       \begin{aligned}
+             & \hphantom{=} \left \langle \uparrow \downarrow \right | \hat{S}_{1+} \hat{S}_{2-} \left | \downarrow \uparrow \right \rangle _z  \\
+              & = \left \langle \uparrow \downarrow \right | \hat{S}_{1+} \hbar \left | \downarrow \downarrow \right \rangle _z , \quad S_{2-}\mbox{ operates on }\left|\uparrow \right \rangle _{2z}. \\
+              &= \hbar \left \langle \uparrow \downarrow \right | \hat{S}_{1+} \left | \downarrow \downarrow \right \rangle _z  \\
+              & = \hbar^2 \left \langle \uparrow \downarrow \vphantom{.}\right  | \left. \uparrow \downarrow \right \rangle _z  \\
+              & = \hbar ^2, \quad \mbox{since the states are orthonormal.}
+        \end{aligned}
+       $$
+       Similarly, 
+       $$
+       \begin{aligned}
+             \left \langle \uparrow \downarrow \right | \hat{S}_{1-} \hat{S}_{2+} \left | \uparrow \downarrow \right \rangle _z & = 0, \\
+             \left \langle \downarrow \uparrow \right | \hat{S}_{1-} \hat{S}_{2+} \left | \uparrow \downarrow \right \rangle _z & = \hbar^2.
+       \end{aligned}
+       $$
+       $$
+       \begin{aligned}
+             & \hphantom{=} \left \langle \downarrow \uparrow \right | \hat{S}_{1z} \hat{S}_{2z} \left | \downarrow \uparrow \right \rangle _z  \\
+              & = \left \langle \downarrow \uparrow \vphantom{\frac{\hbar}{2}} \right | \hat{S}_{1+}\frac{\hbar}{2} \left |\vphantom{\frac{\hbar}{2}} \downarrow \uparrow \right \rangle _z , \quad S_{2z}\mbox{ operates on }\left|\uparrow \right \rangle _{2z}. \\
+              &= \frac{\hbar}{2} \left \langle \downarrow \uparrow \right | \hat{S}_{1z} \left | \downarrow \uparrow \right \rangle _z  \\
+              & = -\frac{\hbar^2}{4} \left \langle \downarrow \uparrow \vphantom{.}\right  | \left. \downarrow \uparrow \right \rangle _z  \\
+              & = -\frac{\hbar^2}{4}, \quad \mbox{since the states are orthonormal.}
+        \end{aligned}
+       $$
+       $$
+       \begin{aligned}
+             & \hphantom{=} \left \langle \uparrow \downarrow \right | \hat{S}_{1z} \hat{S}_{2z} \left | \downarrow \uparrow \right \rangle _z  \\
+              & = \left \langle \uparrow \downarrow \vphantom{\frac{\hbar}{2}} \right | \hat{S}_{1+}\frac{\hbar}{2} \left |\vphantom{\frac{\hbar}{2}} \downarrow \uparrow \right \rangle _z , \quad S_{2z}\mbox{ operates on }\left|\uparrow \right \rangle _{2z}. \\
+              &= \frac{\hbar}{2} \left \langle \uparrow \downarrow \right | \hat{S}_{1z} \left | \downarrow \uparrow \right \rangle _z  \\
+              & = -\frac{\hbar^2}{4} \left \langle \uparrow \downarrow \vphantom{.}\right  | \left. \downarrow \uparrow \right \rangle _z  \\
+              & = 0, \quad \mbox{since the states are orthonormal.}
+        \end{aligned}
+       $$
+       Similarly, 
+       $$
+       \begin{aligned}
+             \left \langle \uparrow \downarrow \right | \hat{S}_{1z} \hat{S}_{2z} \left | \uparrow \downarrow \right \rangle _z & = -\frac{\hbar^2}{4}, \\
+             \left \langle \downarrow \uparrow \right | \hat{S}_{1z} \hat{S}_{2z} \left | \uparrow \downarrow \right \rangle _z & = 0.
+       \end{aligned}
+       $$
+       In this way, the other components can be computed to yield \textbf{III} as the correct representation of the unperturbed Hamiltonian in the chosen basis.
+\item Consider 3 spin $\frac{1}{2}$ particles. What is hte dimensionality of the of the vector space in this case?
+       \begin{enumerate}[I.]
+              \item 2.
+              \item $2+2+2=6$.
+              \item $3^2=9$.
+              \item $2^3=8$. \newline
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{IV} because the product space is $1 \otimes 2 \otimes 3$ and is $2 \times 2 \times 2 = 2^3$ dimensional.
+\item How many basis vectors do you need?
+       \begin{enumerate}[I.]
+              \item 8,
+              \item 9,
+              \item 4, 
+              \item 2. \newline
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{I} because we need 8 linearly independent vectors to represent any state in that vector space.
+\item What is the complete set of basis vectors for this three particle system? \\ \newline
+\textbf{Ans.} Like in the case of the two spin half particles, each particle has $m_z=\pm \half $, and there can be $2^3=8$ possible unique combinations of $m_z$ for three particles. So, $ \ls \uparrow \uparrow \uparrow \rr _z$, $ \ls \uparrow \uparrow \downarrow \rr _z$, $ \ls \uparrow \downarrow \uparrow \rr _z$, $ \ls \downarrow \uparrow \uparrow \rr _z$, $ \ls \downarrow \downarrow \uparrow \rr _z$, $ \ls \downarrow \uparrow \downarrow \rr _z$, $ \ls \uparrow \downarrow \downarrow \rr _z$, $ \ls \downarrow \downarrow \downarrow \rr _z$  can be possible basis vectors for the product space.
+\item Can you construct the operator $\hs_{z}=\hs_{1z}+\hs_{2z}+\hs_{3z}$ in this basis? \\ \newline
+\textbf{Ans.} We can proceed as we did in the case of the two spin $\half$ particles, and calculate the following:
+$$
+\begin{aligned}
+       & \hphantom{=} \lr \ua \ua \ua \rs \hs_{z} \ls \ua \ua \ua \rr \\
+       & = \lr \ua \ua \ua \rs \hs_{1z}+\hs_{2z}+\hs_{3z} \ls \ua \ua \ua \rr \\
+       & = \lr \ua \ua \ua \vphantom{\hhalf} \rs \hhalf + \hhalf + \hhalf \ls \vphantom{\hhalf} \ua \ua \ua \rr \\
+       & = \frac{3\hbar}{2}, \quad \mbox{since the states are orthonormal.}
+\end{aligned}
+$$
+$$
+\begin{aligned}
+       & \hphantom{=} \lr \ua \ua \da \rs \hs_{z} \ls \ua \ua \da \rr \\
+       & = \lr \ua \ua \da \rs \hs_{1z}+\hs_{2z}+\hs_{3z} \ls \ua \ua \da \rr \\
+       & = \lr \ua \ua \da \vphantom{\hhalf} \rs \hhalf + \hhalf - \hhalf \ls \vphantom{\hhalf} \ua \ua \da \rr \\
+       & = \hhalf, \quad \mbox{since the states are orthonormal.}
+\end{aligned}
+$$
+$$
+\begin{aligned}
+       & \hphantom{=} \lr \da \ua \da \rs \hs_{z} \ls \da \ua \da \rr \\
+       & = \lr \da \ua \da \rs \hs_{1z}+\hs_{2z}+\hs_{3z} \ls \da \ua \da \rr \\
+       & = \lr \da \ua \da \vphantom{\hhalf} \rs \hhalf - \hhalf - \hhalf \ls \vphantom{\hhalf} \da \ua \da \rr \\
+       & = -\hhalf, \quad \mbox{since the states are orthonormal.}
+\end{aligned}
+$$
+$$
+\begin{aligned}
+       & \hphantom{=} \lr \ua \ua \da \rs \hs_{z} \ls \da \ua \da \rr \\
+       & = \lr \ua \ua \da \rs \hs_{1z}+\hs_{2z}+\hs_{3z} \ls \da \ua \da \rr \\
+       & = \lr \ua \ua \da \vphantom{\hhalf} \rs \hhalf - \hhalf - \hhalf \ls \vphantom{\hhalf} \da \ua \da \rr \\
+       & = 0, \quad \mbox{since the states are orthonormal.}
+\end{aligned}
+$$
+Similarly, all such elements are zero due to orthonormality. Hence, we arrive at the final matrix representation:
+$$
+\begin{array}{c|rrrrrrrr}
+\hphantom{\ls \ua \ua \ua \rr _z} & \ls \ua \ua \ua \rr _z  & \ls \ua \ua \da \rr _z & \ls \ua \da \ua \rr _z & \ls \da \ua \ua \rr _z & \ls \da \da \ua \rr _z & \ls \da \ua \da \rr _z & \ls \ua \da \da \rr _z & \ls \da \da \da \rr _z \\
+\hline \\
+\ls \ua \ua \ua \rr _z & \frac{3\hbar}{2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \ua \ua \da \rr _z & 0 & \hhalf & 0 & 0 & 0 & 0 & 0 & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \ua \da \ua \rr _z & 0 & 0 & \hhalf & 0 & 0 & 0 & 0 & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \da \ua \ua \rr _z & 0 & 0 & 0 & \hhalf & 0 & 0 & 0 & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \da \da \ua \rr _z & 0 & 0 & 0 & 0 & -\hhalf & 0 & 0 & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \da \ua \da \rr _z & 0 & 0 & 0 & 0 & 0 & -\hhalf & 0 & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \ua \da \da \rr _z & 0 & 0 & 0 & 0 & 0 & 0 & -\hhalf & 0 \\
+\vphantom{\ls \ua \ua \da \rr _z} \\
+\ls \da \da \da \rr _z & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\frac{3\hbar}{2} \\
+\end{array}
+$$
+\newpage
+\item What would be the dimensionality of the vector space for $n$ spin $\half$ particle?
+       \begin{enumerate}[I.]
+              \item $\left(\half\right)^n$,
+              \item $n^\half$,
+              \item $n^2$,
+              \item $2^n$. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} For one spin $\half$ particle, the dimensionality of the associated vector space is $2$. As we add more particles, there is a vector space of dimensionality $2$ associated with each of the particles, and these are all independent. We can construct a product space for $n$ such particles, whose dimension will then be $ 2 \times 2 \times \cdots \times 2 $, multiplied $n$ times. Hence, the dimensionality of the product space turns out to be $2^n$, which is choice \textbf{IV}.
+\item What would be the dimensionality of the product space for $n$ particles of spin $m$?
+       \begin{enumerate}[I.]
+              \item $m^n$.
+              \item $(2m+1)^n$.
+              \item $(2n+1)^n$.
+              \item $n^m$. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{II}. The dimensionality of the vector space associated with one spin-$m$ particle being $(2m+1)$, and using the result of the previous problem, we immediately arrive at the answer. \\ \newline
+\textbf{C}onsider the following conversation between Suman and Sanskriti: \newline
+\textbf{Suman:} In the problem of two spin $\half$ particles, the professor has asked us to choose the appropriate basis. I would say that we can choose a basis in the product space which is different from the one which is a collection of the eigenstates of the $\hs_{1z}$, $\hs_{2z}$. \newline
+\textbf{Sanskriti:} I think you are wrong. We must choose our basis vectors to be eigenstates of the $\hs_{1z}$, $\hs_{2z}$ operators. \newline
+Explain if you agree or disagree with either of them. \\ \newline
+Suman is correct. For a given vector space, no matter how we come to realize it, we are always free to choose our basis vectors. For example, the basis we have used so far is called the ``uncoupled'' basis, with our basis vectors as simultaneous eigenstates of $\hs_{1}^2$ $\hs_{1z}$ $\hs_{2}^2$ $\hs_{2z}$. We can also represent everything in the ``coupled'' representation. For example, with two spin $\half$ particles, the basis vectors will be simultaneous eigenstates of $\hs^2$, with $\vec{S}=\vec{S}_1 + \vec{S}_2$, $\hs_z = \hs_{1z} + \hs_{2z}$, $\hs_1^2$ and $\hs_2^2$. We shall discuss the coupled basis now. \\ \newline
+\item If $s_1 = \half$ and $s_2 = \half$, then what are the possible values of $s = \ls \vec{s} \rs = \ls \vec{s}_1 + \vec{s}_2 \rs$?
+       \begin{enumerate}[I.]
+              \item 1.
+              \item 0.
+              \item 1 and 0.
+              \item None of the above. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} The answer is \textbf{III} because $s$ can take values $(s_1 + s_2)$, $(s_1 + s_2 - 1)$, $\cdots$, $\ls s_1 - s_2 \rs $. So , the allowed values of $s$ are, $\half + \half = 1$ and $\half - \half = 0$.
+\item If $s_1=1$ and $s_2=1$, what can be the possible values of $\vec{s}_1+ \vec{s}_2$?
+       \begin{enumerate}[I.]
+              \item 2.
+              \item 2, 0.
+              \item 1, 0.
+              \item 2, 1, 0. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} The possible values are: $$
+\begin{aligned}
+s_1 + s_2 & = 1 + 1 = 2, \\
+s_1 + s_2 - 1 & = 1 + 1 - 1 = 1, \\
+s_1 - s_2 & = 1 - 1 = 0.
+\end{aligned}
+$$ 
+Hence the answer is choice \textbf{IV}.
+\newpage
+\item If $s=1$, what can be the possible values of $m_z$?
+       \begin{enumerate}[I.]
+              \item $\half$ and $\half$.
+              \item $1$, $0$ and $-1$.
+              \item $1$ and $-1$.
+              \item $1$ and $\half$. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} For a particle with spin $s$, $m_z$ can take $(2s+1)$ values, ranging from $+s$ to $-s$: $s$, $s-1$, $\cdots$, $-s$. \newline
+In this case, $s=1$. So, $m_z$ can take $(2 \times 1 + 1) = 3$ values. The values are, $+s = 1$, $ s-1 = 0$ and $-s = -1$. Therefore, \textbf{II} is the correct choice.
+\item If $s=\thalf$, what is the dimensionality of the vector space?
+       \begin{enumerate}[I.]
+              \item 3.
+              \item 4.
+              \item 5.
+              \item None of the above. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} $s=\thalf$, so the dimensionality of the vector space is $2s+1 = 2 \times \thalf + 1 = 4$, which is choice \textbf{II}. \newline
+\item If $s=\thalf$, whate are the possible values of $m_z$?
+       \begin{enumerate}[I.]
+              \item $+\thalf$, 0, 0, $-\thalf$.
+              \item $-\thalf$, $\half$, $+\thalf$.
+              \item $-\thalf$, $-\half$, $\thalf$.
+              \item $-\thalf$, $-\half$, $\half$, $\thalf$. \\ \newline
+       \end{enumerate} 
+\textbf{Ans.} We will have 4 values for $m_z$. They will be $+\thalf$, $\left(\thalf - 1 \right) = \half$, $\left(\thalf - 2 \right) = -\half$ and $\left(\thalf - 3 \right) = -\thalf = - s$. \newline
+So the correct answer is \textbf{IV}. \\ \newline
+\item If $s=0$ what can be the possible values of $m_z$?
+       \begin{enumerate}[I.]
+              \item 0.
+              \item 0 and 1.
+              \item $\pm 1$.
+              \item None of the above. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} $m_z$ can take values from $+s$ to $-s$. $s$ being 0 in this case, $+s=-s=0$. Hence, $m_z$ can take only the value 0, which is choice \textbf{I}. \\ \newline
+
+\item Based on the answers from 19 through 24 please identify the basis vectors for 2 spin $\half$ particles in the coupled representation. \newline
+[Remember that in the coupled representation, you will not have any label for the particles. The basis vectors will be simultaneous eigenstates of $s_1^2$, $s_2^2$, $s^2$, $m_z$. Since $s_1 =\half$ and $s_2 = \half$, we can label the states using $s$ and $m_z$ only, that is, we can write the states like $ \ls s, m_z \rr $. ]
+       \begin{enumerate}[I.]
+              \item $\ls \half, 0 \rr$ $\ls 0, \half \rr$ $\ls 0, 0 \rr$ $\ls 0, 1 \rr$.
+              \item $\ls 1, 1 \rr$ $\ls 1, 0 \rr$ $\ls 1, -1 \rr$ $\ls 0, 0 \rr$.
+              \item $\ls 1, 0 \rr$ $\ls 0, 0 \rr$ $\ls 0, 1 \rr$.
+              \item $\ls 1, -1 \rr$ $\ls 1, 1 \rr$ $\ls 1, 0 \rr$. \\ \newline
+       \end{enumerate}
+\textbf{Ans.} For $s_1 = \half$ and $s_2 = \half$, $\vec{s} = \vec{s}_1 + \vec{s}_2 $ can take values 1 and 0 (as seen before). For $s = 1$, $m_z$ can take values $1$, $0$, $-1$; and for $s = 0$, $m_z$ can take only the value $0$. So the states are, $\ls 1, 1 \rr$, $\ls 1, 0 \rr$, $\ls 1, -1 \rr$, $\ls 0, 0 \rr$, which is choice \textbf{II}.
+\newpage
+\textbf{Notation 101:}
+$$
+\begin{aligned}
+\hs_1^2 \ls s, m_z \rr & = \hbar^2 s_1 ( s_1 + 1 ) \ls s, m_z \rr, \\
+\hs_2^2 \ls s, m_z \rr & = \hbar^2 s_2 ( s_2 + 1 ) \ls s, m_z \rr, \\
+\hs^2 \ls s, m_z \rr & = \hbar^2 s ( s + 1 ) \ls s, m_z \rr, \\
+\hs_z \ls s, m_z \rr & = \hbar m_z \ls s, m_z \rr. \\
+\end{aligned}
+$$
+\item Can you express $\hat{H}_0 = \frac{2 E_0}{\hbar^2} \left(S^2 - S_1^2 -S_2^2 \right)$ in the coupled basis.
+       \begin{enumerate}[I.]
+              \item $E_0 \left(\begin{array}{rrrr}
+                                   1 & 0 & 0 & 0 \\
+                                   0 & 1 & 0 & 0 \\
+                                   0 & 0 & 1 & 0 \\
+                                   0 & \hphantom{-}0 & \hphantom{-}0 & -3 \\
+                                   \end{array}\right) $.
+              \item $E_0 \left(\begin{array}{rrrr}
+                                   1 & 0 & 0 & 0 \\
+                                   0 & 1 & 0 & 0 \\
+                                   0 & 0 & 1 & 0 \\
+                                   0 & 0 & 0 & 1 \\
+                                   \end{array}\right) $.
+              \item $E_0 \left(\begin{array}{rrrr}
+                                   1 & 0 & 0 & 0 \\
+                                   1 & 0 & 0 & 0 \\
+                                   0 & 0 & 0 & 0 \\
+                                   0 & 0 & 0 & 0 \\
+                                   \end{array}\right) $.
+              \item $E_0 \left(\begin{array}{rrrr}
+                                   1 & 0 & 0 & 0 \\
+                                   0 & 1 & 0 & 0 \\
+                                   0 & 0 & 0 & 0 \\
+                                   0 & 0 & 0 & 0 \\
+                                   \end{array}\right) $.
+       \end{enumerate}
+    \textbf{Ans.}
+    \begin{enumerate}[a)]
+    \item The coupled basis are eigenstates of $\hat{H}_0$, because $\hat{H}_0$ involves $\hs^2$, $\hs_1^2$, and $\hs_2^2$. So, there will be no off-diagonal elements in the representation of $\hat{H}_0$ in this basis. This is where the choice of basis becomes very important. It is always besy to choose your basis in such a way that the operators (observables) become diagonal in that basis. It is exactly analogous to choosing a convenient co-ordinate system in classical mechanics.
+    \item We construct the following table (now that we know that it will house only diagonal elements):
+        $$
+    \begin{array}{c|cccc}
+    \hphantom{ \ls 1, 1 \rr} & \ls 1, 1 \rr & \ls 1, 0 \rr & \ls 1, -1 \rr & \ls 0, 0 \rr \\
+    \hline \\
+    \ls 1, 1 \rr & ?? & 0 & 0 & 0 \\
+    \hphantom{ \ls 1, 1 \rr} \\
+    \ls 1, 1 \rr & 0 & ?? & 0 & 0 \\
+    \hphantom{ \ls 1, 1 \rr} \\
+    \ls 1, 1 \rr & 0 & 0 & ?? & 0 \\
+    \hphantom{ \ls 1, 1 \rr} \\
+    \ls 1, 1 \rr & 0 & 0 & 0 & ?? \\
+    \end{array}
+        $$
+    \item Now we calculate the required matrix elements:
+    $$
+    \begin{aligned}
+    & \hphantom{=} { \lr 1, 1 \vphantom{\frac{2 E_0}{\hbar^2}} \rs} \frac{2 E_0}{\hbar^2} \left(\hs^2 - \hs_1^2 - \hs_2^2 \right) { \ls \vphantom{\frac{2 E_0}{\hbar^2}} 1, 1  \rr} \\
+    & = \frac{2 E_0}{\hbar^2} \left[ 1(1+1) \hbar^2 \lr 1,1 \vphantom{.} \rs \left. 1,1 \rr - \half \left(\half+1\right) \hbar^2 \lr 1,1 \vphantom{.} \rs \left. 1,1 \rr - \half \left( \half+1\right) \hbar^2 \lr 1,1 \vphantom{.} \rs \left. 1,1 \rr \right], \\
+    & = 2 E_0 \left [ 2 - \frac{3}{4} - \frac{3}{4} \right], \\
+    & = E_0.
+    \end{aligned}
+    $$
+    Similarly, ${ \lr 1, 1 \vphantom{\frac{2 E_0}{\hbar^2}} \rs} \frac{2 E_0}{\hbar^2} \left(\hs^2 - \hs_1^2 - \hs_2^2 \right) { \ls \vphantom{\frac{2 E_0}{\hbar^2}} 1, 1  \rr} = E_0$, and the rest can be worked out in exactly the same way.
+    \item The final matrix is:
+    $$ \hat{H}_0 = E_0 \left(\begin{array}{rrrr}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & \hphantom{-}0 & \hphantom{-}0 & -3 \\
+    \end{array}\right). $$
+    \end{enumerate}
+\item Can you express $\hat{H}^{'} = \mu \left ( \vec{S}_1 + \vec{S}_2 \right ) \cdot \vec{B}$ in your coupled basis. [Express it in the block diagonal form if applicable.] \newline
+        [Hint: Assume $\vec{B} = B \hat{k}$.]
+        \begin{enumerate}[I.]
+              \item $\mu B \hbar \left( \begin{array}{crrr}
+              1 & 0 & 0 & 0 \\
+              0 & -1 & \hphantom{-}0 & \hphantom{-}0 \\
+              0 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 0 \\
+              \end{array} \right). $
+              \item $\mu B \hbar \left( \begin{array}{crrr}
+              1 & 0 & 0 & 0 \\
+              0 & \hphantom{-}0 & \hphantom{-}0 & \hphantom{-}0 \\
+              0 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 0 \\
+              \end{array} \right). $
+              \item $\mu B \hbar \left( \begin{array}{crrr}
+              1 & 0 & 0 & 0 \\
+              1 & \hphantom{-}0 & \hphantom{-}0 & \hphantom{-}0 \\
+              0 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 0 \\
+              \end{array} \right). $
+              \item $\mu B \hbar \left( \begin{array}{crrr}
+              1 & 0 & 0 & 0 \\
+              0 & -1 & \hphantom{-}0 & \hphantom{-}0 \\
+              0 & 0 & 1 & 0 \\
+              0 & 0 & 0 & -1 \\
+              \end{array} \right). $ \\ \newline
+        \end{enumerate}
+\textbf{Ans.} $\hat{H}^{'} = \mu \left ( \vec{S}_1 + \vec{S}_2 \right ) \cdot \vec{B} = \mu B \left(\hs_{1z} + \hs_{2z} \right) = \mu B \hs_z$. Hence, in the coupled basis, the Hamiltonian will be diagonal, as these are eigenstates of $\hs_z$ operator. So, it will suffice to calculate the diagonal elements only. Since $\hs_z \ls s, m_z \rr = \hbar m_z \ls s, m_z \rr$,
+$$
+\begin{aligned}
+\lr 1, 1 \rs \hs_z \ls 1, 1 \rr & = \hbar (1)\lr 1, 1 \rs \left. 1, 1 \rr = \hbar, \\
+\lr 1, 0 \rs \hs_z \ls 1, 0 \rr & = \hbar (0) \lr 1, 0 \rs \left. 1, 0 \rr = 0, \\
+\lr 1, -1 \rs \hs_z \ls 1, -1 \rr & = \hbar (-1)\lr 1, -1 \rs \left. 1, -1 \rr = -\hbar, \\
+\lr 0, 0 \rs \hs_z \ls 0, 0 \rr & = \hbar (0)\lr 0, 0 \rs \left. 0, 0 \rr = 0. \\
+\end{aligned}
+$$
+Hence, the matrix is: $$\mu B \hbar \left( \begin{array}{crrr}
+              1 & 0 & 0 & 0 \\
+              0 & -1 & \hphantom{-}0 & \hphantom{-}0 \\
+              0 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 0 \\
+              \end{array} \right). $$
+This is why, it is most convenient to choose coupled basis for this problem, as then the matrix representation of the Hamiltonian becomes diagonal.
+\end{enumerate}
+\textbf{Problem.} Consider two non-relativistic spin $1$ particles.
+\begin{enumerate}[(a)]
+\item What is the dimensionality of the associated vector space?
+\item Express the basis vectors in the ``uncoupled'' representation in the product space.
+\item Express the basis vectors in the ``coupled'' representation, [clearly explain your notation.]
+\item Give a matrix representation of $\hs_z = \hs_{1z} + \hs_{2z}$ in both the basis.
+\end{enumerate}
+\end{document}

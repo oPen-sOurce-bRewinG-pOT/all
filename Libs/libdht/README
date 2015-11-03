@@ -1,0 +1,52 @@
+Pre-requisites: GSL Library
+
+GSL Library can be installed in Mac OS X with Homebrew (recommended, MacPorts is not recommended): brew install gsl
+
+In Linux, you can either build it manually (with --prefix=/usr/local). In Ubuntu you can install GSL with apt-get. Google for necessary info.
+
+Make sure you are using GCC, not CLang.
+
+Check with gcc --version .
+It should clearly state whether it is CLang or GCC.
+
+If it is CLang, then do the following:
+
+Install homebrew. Then execute the following:
+
+$brew search gcc
+
+(Without the $, of course)
+Then You will find homebrew/dupes/apple-gcc42 as one of the options.
+Next execute
+
+$brew install homebrew/dupes/apple-gcc42
+
+Make sure the binaries have been linked.
+
+Finally, put the following line in your /etc/bashrc or ~/.bash_profile 
+(Mac):
+
+export PATH=/usr/local/bin:$PATH
+
+
+Then save changes, and either open a new terminal window or source the 
+rc file you changed to continue installing FFTW. Then you can execute 
+the following, in order, to make this library:
+
+make
+sudo make install
+make pywrapper
+
+Run make testpy to make sure the code is giving the right results. It should return you
+an array containing "True" only.
+
+
+After this, you should be able to execute the following:
+
+import d_hankel_t (in python)
+
+k = d_hankel_t.compute_dht ( size (length of array) , input array , order of J , maximum range of x )
+
+k will be returned as a numpy array ( size ) , double.
+
+Happy coding!

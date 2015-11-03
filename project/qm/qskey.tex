@@ -1,0 +1,507 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,color,tikz,graphicx,fixltx2e,float,enumerate,wrapfig,multirow}
+
+\setlength{\baselineskip}{6.0pt}    % 16 pt usual spacing between lines
+
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\parindent}{20pt}
+\setlength{\oddsidemargin}{0.5cm}
+\setlength{\evensidemargin}{0.5cm}
+\setlength{\marginparsep}{0.75cm}
+\setlength{\marginparwidth}{2.5cm}
+\setlength{\marginparpush}{1.0cm}
+\setlength{\textwidth}{150mm}
+\newcommand\half{\frac{1}{2}}
+\newcommand\thalf{\frac{3}{2}}
+\newcommand\lr{\left \langle}
+\newcommand\rr{\right \rangle}
+\newcommand\ls{\left |}
+\newcommand\rs{\right |}
+\newcommand\hs{\hat{S}}
+\newcommand\tbf[1]{\textbf{#1}}
+%\newcommand{\hs_}[1]{\hat{S}_{#1}}
+\newcommand\ua{\uparrow}
+\newcommand\da{\downarrow}
+\newcommand\hhalf{\frac{\hbar}{2}}
+\newcommand\ta{\tbf{Alice: }}
+\newcommand\tp{\tbf{Prof.: }}
+\newcommand\qbt[1]{QuBit}
+\newcommand\tans{\tbf{Ans.}}
+\newcommand\none{None of the above.}
+\title{Quantum Safe Key Distribution}
+\author{Dr. Suchetana Chatterjee}
+
+\begin{document}
+\maketitle
+\begin{enumerate}[1.]
+\begin{center}
+\large{Scene I}
+\end{center}
+
+{(Mr. Wilson, the project manager is seated on a chair working with his files. Alice, one of his employee, enters.)} \newline
+\tbf{Alice:} Good morning, Mr. Wilson. \\ \newline
+\tbf{Wilson:} Hi, Alice. How are you doing today? \\ \newline
+\tbf{Alice:}	I'm doing fine, thank you very much. \\ \newline
+\tbf{Wilson:} Alice, I have something very important to talk to you about. We need to deliver Bob some very important information about a very confidential pass key. But we need to be absolutely sure that no one is eavesdroppin. Since Bob and you will be talking over the telephone, we need to make sure that no one is intercepting the call. Okay? \\ \newline
+\tbf{Alice:} I do understand what you want to achieve, sir. But I do not understand how we can achieve it. \\ \newline
+\tbf{Wilson:} Ah that's nothing to worry about. My very good friend Dr. Griffiths will help you about it. I shall refer you to him. \\ \newline
+\tbf{Alice:} Thank you, Mr. Wilson! [Leaves] \\ \newline
+\newpage
+\begin{center}
+\large{Scene II}
+\end{center}
+(Prof. Griffiths is working on his table when Alice enters.)\\ \newline %
+\tbf{Alice:} Hello, Prof. Griffiths. \\ \newline
+\tbf{Prof:} Hello Alice! Wilson told me you'd be paying a visit. I hear you need to understand the quantum safe key distribution, right? \newline
+\tbf{Alice:} Yes, sir. \newline
+\tbf{Prof:} Please sit down, Alice. We need to begin from the very beginning! \\ \newline
+(Prof. takes a piece of chalk and walks to the blackboard.) \\ \newline
+\tbf{Prof.} Well, Alice, how are information stored and transferred today? What kind of technology is used? `Digital' or `analog'? \newline
+\tbf{Alice:} Digital, professor. \\ \newline
+\tp Great! So everything is stored in bits in a digital system. Tell me what is a bit? \newline
+%there is some overlap with `Basics of Quantum Computation', `Analogy of electron spin with photon polarization' etc.
+	\item What is the correct answer according to you?
+		\begin{enumerate}[I.]
+			\item Measuring device.
+			\item Something that can exist in two states.
+			\item 1 and 0.
+			\item Powers of 10. \\ \newline
+		\end{enumerate}
+		The answer is \tbf{II} because bit means anything that exists in two distinct states. BIT is binary (which means two) digit.
+	\item Which among the following can be a bit?
+		\begin{enumerate}[a)]
+			\item Negative and positive numbers, and zero.
+			\item The plates of a capacitor above and below a certain charge.
+			\item Head or tail.
+			\item The result of tossing two coins simultaneously. \\ \newline
+		\end{enumerate}
+		\begin{enumerate}[I.]
+			\item a.
+			\item All of the above.
+			\item b and c.
+			\item b only. \\ \newline
+		\end{enumerate}
+		It is number \tbf{III}, because negative, positive and zero are three possible states, and if you toss two coins simultaneously, the outcome has three possible values out of head-head, head-tail and tail-tail, if you do not distinguish between the coins. \\ \newline
+\tp But bits are not necessarily classical. There can be quantum mechanical bits called Qu-Bits. \\ \newline
+	\item Which of the following can be a QuBit?
+		\begin{enumerate}[a)]
+			\item Spin states of an electron.
+			\item Energy states of the hydrogen atom.
+			\item Energy eigenstates of the harmonic oscillator.
+			\item Polarization states of a photon. \\ \newline
+		\end{enumerate}
+		\begin{enumerate}[I.]
+			\item a and b.
+			\item b and c.
+			\item d only.
+			\item a and d. \\ \newline
+ 		\end{enumerate}
+ 		The correct answer is \tbf{IV}. The electron is a spin half particle,  so its $z$ component is $+\half$ and $-\half$. The photon is a spin $1$ particle, so it can have three states $\pm 1$ and $0$. But, the particle being relativistic, it is not allowed to have the zero state (which is a prediction of quantum field theory). So it also has two states. Therefore, `a' and `d' can be QuBits. \\ \newline
+ \ta But why do we care about quantum mechanics at all? \newline
+ \tp Well, Alice. Classically we can not by any means transfer a key safely over a public channel. You can not know if someone is eavesdropping. Quantum mechanics, on the other hand, saves us there. But to understand the how, we need to review some concepts of quantum mechanics first. \newline
+ \ta Sounds great! \newline
+ \tp Tell me, if I have a two state system in quantum mechanics, then,
+ 	\item What is the dimensionality of the associated vector space?
+ 	\begin{enumerate}[I.]
+ 		\item 1-dimensional.
+ 		\item Infinite dimensional.
+ 		\item 2-dimensional.
+ 		\item \none \newline
+ 	\end{enumerate}
+ 	The answer is \tbf{III}. The vector space is 2-dimensional. \\ \newline
+ \tp One other important concept in quantum mechanics is linear independence and linearly independent vectors. We need to know about them.
+ 	\item We call two vectors $\ls a \rr$ and $\ls b \rr$ linearly independent when:
+ 		\begin{enumerate}[I.]
+ 			\item $\alpha \ls a \rr + \beta \ls b \rr = 0$, only if $\alpha$ and $\beta$ are any two numbers.
+ 			\item $\alpha \ls a \rr + \beta \ls b \rr = 0$, only if $\alpha$ and $\beta$ are both simultaneously equal to $0$.
+ 			\item $\alpha \ls a \rr + \beta \ls b \rr = k$, only if $k$ is an arbitrary constant.
+ 			\item $\alpha \ls a \rr - \beta \ls b \rr = 0$. \\ \newline
+ 		\end{enumerate}
+ 	The answer is \tbf{II} because if $\alpha \ls a \rr + \beta \ls b \rr = 0$, for non zero $\alpha$ and $\beta$, then $\ls a \rr = -\frac{\beta}{\alpha}\ls b \rr = \gamma \ls b \rr$. So, it would be possible to represent $\ls a \rr$ in terms of $\ls b \rr$. Then they would be linearly dependent, and co-linear vectors. The only combination for which the combination can be zero for linearly independent vectors is where both $\alpha$ and $\beta$ are zero.
+ 	\item For a 2-dimensional vector space how many linearly independent vectors do you need to represent any state in that vector space?
+ 		\begin{enumerate}[I.]
+ 			\item 2 vectors.
+ 			\item At least 2 vectors.
+ 			\item At most 2 vectors.
+ 			\item Infinite number of vectors. \\ \newline
+ 		\end{enumerate}
+ 		The answer is \tbf{II}, because you can represent a two dimensional vector as the linear combination of ANY two linearly independent vectors in that vector space. The two linearly independent vectors are called \emph{basis vectors}. Choosing a basis is like choosing a co-ordinate system.
+ 	\item Now, if we take the vertical and horizontal polarization states of the photon as basis vectors in our 2-dimensional vector space then how would you represent a normalized $+45^\circ$ polarization? [$\ls S \rr _{45^\circ}$ represents $+45^\circ$ polarization, $\ls V \rr$ is vertical and $\ls H \rr$ is horizontal polarization. We shall follow this notation throughout.]
+ 		\begin{enumerate}[I.]
+ 			\item $\ls S \rr _{45^\circ} = \ls V \rr + \ls H \rr$.
+ 			\item $\ls S \rr _{45^\circ} = \ls V \rr - \ls H \rr$.
+ 			\item $\ls S \rr _{45^\circ} = \frac{1}{\sqrt{2}}\left( \ls V \rr + \ls H \rr \right)$.
+ 			\item $\ls S \rr _{45^\circ} = \half \left( \ls V \rr + \ls H \rr \right)$. \\ \newline
+ 		\end{enumerate}
+ 		When we talk about normalized states we mean that $\ls \psi \rr = \alpha \ls a \rr + \beta \ls b \rr$, such that $\alpha^2 + \beta^2 = 1$. Only \tbf{III} satisfies this criterion. When you express a polarization state in terms of the basis vectors, the coefficients $\alpha$ and $\beta$ depend on the angle between the polarization state vector and the basis vectors. \newpage
+% 		\begin{wrapfigure}{l}{5cm}
+			%\caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
+%			\begin{tikzpicture}
+%				\draw[gray, very thin, step=0.25] (0,0) grid (5,5);
+% 			\end{tikzpicture}
+%		\end{wrapfigure}
+%\vspace{8cm} %photo space
+\rule{0pt}{20ex}
+ 		 If $\theta$ and $\theta^{'}$ are the corresponding angles then the coefficients will be $\cos{\theta}$ and $\cos{\theta^{'}}$. Hence,
+ 		 $$
+ 		 \begin{aligned}
+ 		 \ls s \rr _{45^\circ} &= \cos{\theta} \ls H \rr + \cos{\theta^{'}}\ls V \rr \\
+ 		 &= \cos{\theta} \ls H \rr + \cos\left({\frac{\pi}{2}-\theta}\right)\ls V \rr \\
+ 		 &= \cos{\theta} \ls H \rr + \sin{\theta}\ls V \rr
+ 		 \end{aligned}
+ 		 $$
+ 		 
+% 		\newpage
+ 		
+\item Express $-45^\circ$ polarization in the basis of $\ls V \rr$ and $\ls H \rr$. \newline [Hint: Draw a diagram.] \\ \newline
+\tbf{Ans. }It will be $\frac{1}{\sqrt{2}}\ls H \rr - \frac{1}{\sqrt{2}}\ls V \rr$, because $\theta = -45^\circ$, $\cos(-45^\circ)=\frac{1}{\sqrt{2}}$, $\sin(-45^\circ)=-\frac{1}{\sqrt{2}}$. \newline
+The choice of basis is not unique. We can choose any 2 vectors as long as they are not co-linear, as our basis vectors. \\ \newline
+\item Which of the following can be a basis for the polarization states of a photon? \newline
+\begin{enumerate}[I.]
+\item Vertical and horizontal polarization.
+\item $30^\circ$ and $-60^\circ$.
+\item $45^\circ$ and and $-45^\circ$.
+\item Horizontal and $-45^\circ$.
+\item All of the above.
+\item Everything except \tbf{IV}. \\ \newline
+\end{enumerate} 
+\tbf{Ans. }The answer is \tbf{V} because any of them can be treated as basis vectors. However \tbf{IV} is not an orthogonal basis. They have component along each other. So it is not a convenient basis to choose. It is always a good idea to choose an orthogonal basis. \\ \newline
+\ta What is exactly an orthogonal basis?
+\tp Well, rigorously two vectors are said to be orthogonal when the scalar product of $\lr a \rs \left. b \rr = 0$, which means the vectors do not have components along each other. Meaning, you can not write one of these two vectors with the help of the other in any manner whatsoever.
+
+\item Which of the following is an orthogonal basis? \newline
+\begin{enumerate}[a)]
+\item Horizontal and vertical.
+\item $-45^\circ$ and $+45^\circ$.
+\item $30^\circ$ and $60^\circ$.
+\item $-60^\circ$ and $30^\circ$. \newline
+\end{enumerate}
+\begin{enumerate}[I.]
+\item All of the above.
+\item a, b and c.
+\item a and b.
+\item a, b and d. \newline
+\end{enumerate}
+\tbf{Ans. }The correct answer is \tbf{IV} because \textit{c} is the one where the vectors are not perpendicular to each other. \newline
+
+\item In a 2-dimensional vector space, how many orthogonal basis can you have? \newline
+\begin{enumerate}[I.]
+\item 1.
+\item Infinite.
+\item $2\times 2 + 1 = 5$.
+\item 2. \newline
+\end{enumerate}
+\tbf{Ans. }The answer is infinite. You can have infinite combinations of orthogonal vectors in a 2-dimensional vector space. The result is the same regardless of dimensions. \newline
+
+\tp Then next question is which one should we choose? Well, we will choose the one that is most convenient for our measurement. For example, if we are using vertical and horizontal polarizers to measure the polarization states of a photon it would be best to choose $\ls V \rr$ and $\ls H \rr$ as our basis, $\ls S \rr = \alpha \ls V \rr + \beta \ls H \rr$. \newline
+\item If you are using $\pm 45^\circ$ polarizers to measure polarization which of the ones should you use as your basis?
+\begin{enumerate}[I.]
+\item $\ls S \rr _{45^\circ}$ and $\ls S \rr _{-45^\circ}$.
+\item Vertical and horizontal.
+\item $\ls S \rr _{100^\circ}$ and $\ls S \rr _{190^\circ}$.
+\item None of the above. \newline
+\end{enumerate}
+\tbf{Ans.} Since you are measuring with $\pm 45^\circ$ polarizer your state will always collapse to a state where the polarization of the photon after measurement is either $+45^\circ$ or orthogonal to it $-45^\circ$. So it would be best to choose your basis as $\ls S \rr _{45^\circ}$ and $\ls S \rr _{-45^\circ}$. So the correct answer is \tbf{I}. Remember that no matter what the state of the photon was initially it will either collapse to $+45^\circ$, or $-45^\circ$, once you do the measurement. This is called the ``collapse hypothesis''. \newline
+\tp Let's think about an experiment now.
+\item Suppose you are measuring polarization with $\ls H \rr$ and $\ls V \rr$. Write down $\ls S \rr_{45^\circ}$ in the appropriate basis. \\ \newline
+\tbf{Ans.} The basis will be $\ls H \rr$ and $\ls V \rr$, and $\ls S \rr _{+45^\circ} = \frac{1}{\sqrt{2}}\ls H \rr + \frac{1}{\sqrt{2}} \ls V \rr$.
+\item Now write any state $\ls S \rr$ in the basis of $\ls H \rr$ and $\ls V \rr$. \newline
+\tbf{Ans.} $\ls S \rr = \alpha \ls H \rr + \beta \ls V \rr$.
+\item According to the `collapse hypothesis' for \tbf{14} the state will collapse to either $\ls H \rr$ or $\ls V \rr$. So what is the probability that you measure horizontal polarization? \newline
+\begin{enumerate}[I.]
+\item 1.
+\item $\alpha$.
+\item $\alpha^2$.
+\item $\alpha \beta$. \newline
+\end{enumerate}
+\tbf{Ans.} The probability for measuring horizontal polarization would be $\alpha^2$. This comes from the fact that,
+$$
+\begin{aligned}
+ \ls S \rr &= \alpha \ls H \rr + \beta \ls V \rr, \\
+\Rightarrow \lr H \rs \left. S \rr &= \alpha \lr H \rs \left. H \rr + \beta \lr H \rs \left. V \rr, \\
+&= \alpha.
+\end{aligned}
+$$
+Thus, the determined coefficient is $\alpha$, and the probability is thus $\alpha^2$. \newline
+\item Can you find the probabilty for measuring vertical polarization? \newline
+\tbf{Ans.} Using the same steps, $\ls S \rr = \alpha \ls H \rr + \beta \ls V \rr$ yields the coefficient $\ls V \rs \left. S \rr = \beta$, hence the probability turns out to be $\beta^2$. \newline
+\item For $\ls S \rr _{45^\circ}$, what is the chance that you measure horizontal polarization?
+\begin{enumerate}[I.]
+	\item 100\%.
+	\item 50\%.
+	\item 25\%.
+	\item None of the above. \newline
+\end{enumerate}
+\tbf{Ans. }The correct answer is \tbf{II} because from \tbf{Q 13} we see that,
+$$
+\ls S \rr _{45^\circ} = \frac{1}{\sqrt{2}} \ls H \rr + \frac{1}{\sqrt{2}} \ls V \rr.
+$$
+Therefore, the probability for obtaining horizontal polrization is just $\left(\frac{1}{\sqrt{2}}\right)^2=\half$, which is $\half \times 100\% = 50\%$. \\ \newline
+
+\tp It is interesting to see the difference between the classical ``Mallus' Law'' with this. Here we are considering only one photon, and unless we do a measurement we are not sure if the photon has passed through a certain polarizer, whereas for ``Mallus' Law'', there was only a beam of photons and there was no uncertainty. The average intensity was given by $I_0 \cos^2{\theta}$, where $\theta$ is the angle between the polarizing axis of the polarizer and the polarization vector of the electromagnetic wave. The uncertainty thus translates into the so called ``expectation value''. \newline
+\ta I undertand. \newline
+\item If a photon is polarized at $60^\circ$, find the probability of observing it with a $45^\circ$ polarizer.
+\begin{enumerate}[I.]
+\item 50\%.
+\item 96.59\%.
+\item 93.30\%.
+\item 100\%. \newline
+\end{enumerate}
+\tans The correct answer is \tbf{III} because,
+$$
+\ls S \rr _{60^\circ} = \cos{15^\circ} \ls S \rr _{45^\circ}+\cos{105^\circ} \ls S \rr _{-45^\circ},
+$$
+and hence the probability is $\cos^2{15^\circ} = 93.30 \%$. \newline
+\ta Professor, after doing a measurement on a particle, can we restore it to the original state? \newline
+\tp No, Alice. Once you do a measurement, the state can never never be restored to the original state. That is all because, you have no idea what the original state was! The moment you made the measurement, you disturbed the system, and all information prior to that measurement about the system is lost. \newline
+\ta Is that not amazing, now! \newline
+\tp Okay, that's enough of quantum mechanics we did. Now let us move on to ``safe key distribution''. Do you have some idea now, about how to do this? \newline
+\ta Why! I will send vertical and horizontal polarized photons over to Bob labelling them as 1, and 0, and we will be connected over the phone. Every time Bob says he got a photon, we shall both note that! \newline
+\tp Excellent! But let's think it over a bit, now. \newline
+\item Everytime Alice sends a photon to Bob and Bob measures it. What can Bob infer about the state of the photon?
+\begin{enumerate}[I.]
+\item He is 50\% sure when he gets a click.
+\item He is 50\% sure when he doesn't get anything.
+\item He is 100\% sure in every case.
+\item He is 100\% sure only when he gets a click. \newline
+\end{enumerate}
+\tans The answer is \tbf{III}. Let's say, Alice sends a vertical photon. If Bob measures it with a horizontal polarizer, he does not get a photon, hence he knows immediately that the original photon was a vertical. Again, if Bob measures it with a vertical polarizer, he gets a photon, and he knows that the photon was vertical, and it is all because they are using orthogonal systems for signal transmission. \newline
+\item Answer the following:
+{\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Bob uses & Bob observes & Bob infers \\
+\hline
+$\ls V \rr$ & Nothing & \phantom{$\ls H \rr$} \\
+$\ls V \rr$ & Photon & \phantom{$\ls V \rr$} \\
+$\ls H \rr$ & Nothing & \phantom{$\ls V \rr$} \\
+$\ls H \rr$ & Photon & \phantom{$\ls H \rr$} \\
+\hline
+\end{tabular}
+\end{center}}
+%\newline
+\tans The completed table is:
+{\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Bob uses & Bob observes & Bob infers \\
+\hline
+$\ls V \rr$ & Nothing & {$\ls H \rr$} \\
+$\ls V \rr$ & Photon & {$\ls V \rr$} \\
+$\ls H \rr$ & Nothing & {$\ls V \rr$} \\
+$\ls H \rr$ & Photon & {$\ls H \rr$} \\
+\hline
+\end{tabular}
+\end{center}}	
+\vspace{1cm}
+\ta Now let {Eve} (the culprit) eavesdrops over your conversation. Now, by intercepting each photon sent by you, she can certainly know which photon you have sent? And then she can just relay the same photon over to Bob, so that none of you can ever anticipate that you are being watched. \newline
+\ta Oh my goodness! Then what can I do to prevent this? \newline
+\tp Wait. We shall need to use two non-orthogonal basis if we have to know if someone is eavesdropping. \newline
+\ta Now how is that? \newline
+\tp Okay, then read this up! \newline
+\begin{center}
+[Hands over a copy of Bennett (1991) Phys. Rev. Vol. 68 No. 21]
+\end{center}
+Alice sends photons of $+45^\circ$ polarization and horizontal ($0^\circ$) polarization. Bob measures them with $-45^\circ$ and vertical ($90^\circ$). Every time Bob gets a photon, he notifies Alice, and they decide to call $+45^\circ$ bit 1 and $0^\circ$ as bit 0. \newline
+\item Alice transmits $+45^\circ$ and Bob measures it with $-45^\circ$ polarizer. What does Bob observe?
+\begin{enumerate}[I.]
+\item Photons are always blocked.
+\item 50\% photons are blocked.
+\item Photons always pass.
+\item 75\% photons are blocked. \newline
+\end{enumerate}
+\tans The answer is \tbf{I}, because $+45^\circ$ and $-45^\circ$ are mutually orthogonal.
+\item Alice transmits $+45^\circ$ polarization. Bob measures it with a $90^\circ$ filter. What does Bob observe?
+\begin{enumerate}[I.]
+\item Photons are always blocked.
+\item 50\% photons are blocked.
+\item Photons always pass.
+\item 75\% photons are blocked. \newline
+\end{enumerate}
+\tans The correct answer is II.
+$$\ls S \rr _{45^\circ} = \frac{1}{\sqrt{2}} \ls V \rr + \frac{1}{\sqrt{2}} \ls H \rr.$$
+For measurement with vertical polarizer, the probability that Bob will see photon passing is $\left(\frac{1}{\sqrt{2}}\right)^2=\half \equiv 50\%$. So the rest 50\% will be blocked.
+\item Alice transmits $0^\circ$ and Bob uses $-45^\circ$ filter. What would Bob observe?
+\begin{enumerate}[I.]
+\item Photons always pass.
+\item Photons are always blocked.
+\item 75\% photons are blocked.
+\item 50\% photons pass. \newline
+\end{enumerate}
+\tans $$\ls H \rr =\frac{1}{\sqrt{2}}\ls S \rr _{45^\circ}+\frac{1}{\sqrt{2}}\ls S \rr _{-45^\circ}.$$
+The probability that Bob sees them is $\half \equiv 50\%$ and so the correct answer is \tbf{IV}.
+\item Alice transmits $0^\circ$ and Bob measures with $90^\circ$, what will Bob observe?
+\begin{enumerate}[I.]
+\item Photons always pass.
+\item Photons pass 75\% of the time.
+\item Photons never pass.
+\item Photons pass only 50\%. \newline
+\end{enumerate}
+\tans The answer is \tbf{III} because $0^\circ$ and $90^\circ$ are orthogonal to each other.
+\item Based on the answers in \tbf{Q 21} and \tbf{Q 24}, complete the following table:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Alice Transmits & Bob Measures & Bob Observes \\
+\hline
+\multirow{2}{*}{$+45^\circ \equiv 1$} & $-45^\circ$ & \phantom{0} \\
+					   \cline{2-3}
+					   & $90^\circ$ & \phantom{$\half$} \\
+\hline
+\multirow{2}{*}{$0^\circ \equiv 0$} & $-45^\circ$ & \phantom{$\half$} \\
+						\cline{2-3}
+					& $90^\circ$ & \phantom{0} \\
+\hline
+\end{tabular}
+\end{center}
+\tans The answer is:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Alice Transmits & Bob Measures & Bob Observes \\
+\hline
+\multirow{2}{*}{$+45^\circ \equiv 1$} & $-45^\circ$ & Photons blocked. \\
+					   \cline{2-3}
+					   & \multirow{2}{*}{$90^\circ$} & 50\% times blocked. \\
+					   					\cline{3-3}
+					   &					& 50\% times passed. \\
+\hline
+\multirow{2}{*}{$0^\circ \equiv 0$} & \multirow{2}{*}{$-45^\circ$} & 50\% times passed. \\
+					\cline{3-3}
+					& & 50\% times blocked. \\
+						\cline{2-3}
+					& $90^\circ$ & Photons blocked. \\
+\hline
+\end{tabular}
+\end{center}
+\newpage
+\item For which of the observations is Bob 100\% sure of what was originally sent?
+\begin{enumerate}[I.]
+\item In all cases.
+\item In none of the cases.
+\item Only when he does not obtain a photon.
+\item Only when he gets a photon. \newline
+\end{enumerate}
+\tans The answer is \tbf{IV}, since when he gets a photon with a $90^\circ$ polarizer, he is sure that has come only from a $45^\circ$ photon. But, when he does not obtain a photon, it can be either $45^\circ$ (67\% chance) photon or $0^\circ$ photon (33\% chance), and there is no way of telling them apart! \\ \newline
+%\vspace{1cm}
+\ta Aha! So Eve will have the same problem! \newline
+\tp Exactly. When she will be unsure, she will have to make a guess about the photon, and relay that over to Bob, hoping she will be right. \newline
+\ta But she just can't be right all the time! \newline
+\tp That's right. Now tell me, what is the probability that she gets it right?
+\item Look at the previous table and infer the fraction of time Eve is sure what Alice has sent:
+\begin{enumerate}[I.]
+\item 30\% of the time.
+\item 25\% of the time.
+\item 50\% of the time.
+\item 75\% of the time. \newline
+\end{enumerate}
+\tans The table shows that $\frac{1}{4}$ or 25\% of the time Eve will exactly know what Alice has sent. So, the answer is \tbf{II}.
+\item Complete the following table ($90^\circ \equiv V$ and $0^\circ \equiv H$, $-45^\circ \equiv \bar{S}$ and $45^\circ \equiv S$):
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{2}{ |c| }{Person} & \\
+\hline
+\multirow{2}{*}{Alice} & Bit Value & 1 0 1 0 1 0 \\
+			\cline{2-3}
+			& Polarization & S H S H S H \\
+\hline
+\multirow{2}{*}{Bob} & \rule{0pt}{2.2ex} Polarization & $\bar{S}$ $\bar{S}$ V V V $\bar{S}$ \\
+			\cline{2-3}
+			&  Result & \phantom{$\half$} \phantom{S H S H S H} \\
+\hline
+\multicolumn{3}{ |l| }{Transmitted Key: } \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\tans The answer is:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{2}{ |c| }{Person} & \\
+\hline
+\multirow{2}{*}{Alice} & Bit Value & 1 0 1 0 1 0 \\
+			\cline{2-3}
+			& Polarization & S H S H S H \\
+\hline
+\multirow{2}{*}{Bob} & \rule{0pt}{2.2ex} Polarization & $\bar{S}$ $\bar{S}$ V V V $\bar{S}$ \\
+			\cline{2-3}
+			& Result & \vphantom{$\half$} \phantom{S H S H S H} \\
+\hline
+\multicolumn{3}{ |l| }{Transmitted Key: } \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\tp So you see, Alice? No matter how careful Eve is, she will introduce a minimum 25\% error in the key transfer, and you will have a key distribution as safe as it can be! You only have to query certain bits which Bob receives (let's say every 10th bit), after the whole key is transferred.\newline
+\ta If someone is eavesdropping, then there will be some discrepancy in the result! How elegant! \newline
+\tp Yes, it is. So, after the cross check if there is some discrepancy, just discard the key and try some other time! \newline
+\ta Thank you so very much, Prof. Griffiths! \newline
+\tp I wish you all the best, Alice. \newline
+\begin{center}
+\tbf{Scene III}
+\end{center}
+\begin{center}
+[Mr. Wilson's room: Alice enters.]
+\end{center}
+\ta Hello, Mr. Wilson! I finally got it! \newline
+\tbf{Mr. Wilson:} That is great! Here is a reference: \emph{Bethune and Risk (2000), IEEE Journal 36(3) 340-7} of how it is implemented. \newline
+\ta Thanks, Mr. Wilson! I will look over it and get back to you.
+\newpage
+\item Alice and Bob decides that instead of using $+45^\circ$ and $0^\circ$, she will transmit $60^\circ$ and $0^\circ$ polarized photons. Bob will keep his polarizers at $-30^\circ$ and $90^\circ$, with $60^\circ \equiv 1$ and $0^\circ \equiv 0$.
+\begin{enumerate}[a)]
+\item When Alice transmits $60^\circ$ and Bob uses $-30^\circ$, what would Bob observe? Explain your answer.
+\begin{enumerate}[I.]
+\item Photons are always blocked.
+\item 50\% of the time the photons are blocked.
+\item Photons always pass.
+\item 75\% of the time the photons are blocked.
+\end{enumerate}
+\item When Alice transmits $+60^\circ$ and Bob measures it with $90^\circ$ polarizer, what does Bob observe? Explain your choice.
+\begin{enumerate}[I.]
+\item Photons are always blocked.
+\item 50\% of the time the photons are blocked.
+\item Photons always pass.
+\item 75\% of the time the photons are blocked.
+\end{enumerate}
+\item When Alice transmits $0^\circ$ and Bob uses $-30^\circ$ polarizer, what does Bob observe? Explain your choice.
+\begin{enumerate}[I.]
+\item Photons are always blocked.
+\item 50\% of the time the photons are blocked.
+\item Photons always pass.
+\item 75\% of the time the photons are blocked.
+\end{enumerate}
+\item When Alice transmits $0^\circ$ and Bob uses $90^\circ$ polarizer, what does Bob observe? Explain your choice.
+\begin{enumerate}[I.]
+\item Photons are always blocked.
+\item 50\% of the time the photons are blocked.
+\item Photons always pass.
+\item 75\% of the time the photons are blocked.
+\end{enumerate}
+\end{enumerate}
+			
+		
+	
+\end{enumerate}
+
+
+
+Based on the answers from \tbf{29 a} to \tbf{d}, complete the following table:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Alice Transmits & Bob Measures & Bob Observes \\
+\hline
+\multirow{2}{*}{$+60^\circ \equiv 1$} & $-30^\circ$ & \phantom{0} \\
+					   \cline{2-3}
+					   & $90^\circ$ & \phantom{$\half$} \\
+\hline
+\multirow{2}{*}{$0^\circ \equiv 0$} & $-30^\circ$ & \phantom{$\half$} \\
+						\cline{2-3}
+					& $90^\circ$ & \phantom{0} \\
+\hline
+\end{tabular}
+\end{center}
+\end{document}

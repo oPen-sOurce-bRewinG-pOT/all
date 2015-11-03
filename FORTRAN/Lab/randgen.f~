@@ -1,0 +1,13 @@
+       program randgen
+       double precision, dimension (500,500) :: a
+       open(1,file='det.dat')
+       do i=1,20
+       do j=1,20
+       a(i,j)=rand()
+       end do
+       write(1,*), (a(i,j),j=1,20)
+       end do
+       end program randgen
+
+       
+       

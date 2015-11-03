@@ -1,0 +1,32 @@
+a = log(10)
+b = log(365.25)
+set xl "Log(Sigma)"
+set yl "Log(Tau)"
+#plot "Set0_1yr/1.dat" u ($3+a)/a:($2+b)/a w p title "Type 1 band J 1yr"
+#replot "Set0_1yr/2.dat" u ($3+a)/a:($2+b)/a w p title "Type 2 band J 1yr"
+#replot "Set0_1yr/3.dat" u ($3+a)/a:($2+b)/a w p title "Type 1 band R 1yr"
+#replot "Set0_1yr/4.dat" u ($3+a)/a:($2+b)/a w p title "Type 2 band R 1yr"
+plot "Set1_5yr_5d/1.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 1 band J 5yr_5d rs"
+replot "Set1_5yr_5d/2.dat" u ($3+a)/a:($2+b)/a w p pt 4 title "Type 2 band J 5yr_5d rs"
+replot "Set1_5yr_5d/3.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 1 band R 5yr_5d rs"
+replot "Set1_5yr_5d/4.dat" u ($3+a)/a:($2+b)/a w p pt 4 title "Type 2 band R 5yr_5d rs"
+#replot "Set2_5yr_18d/1.dat" u ($3+a)/a:($2+b)/a w p pt 1 title "Type 1 band J 5yr_18d rs"
+#replot "Set2_5yr_18d/2.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 2 band J 5yr_18d rs"
+#replot "Set2_5yr_18d/3.dat" u ($3+a)/a:($2+b)/a w p pt 1 title "Type 1 band R 5yr_18d rs"
+#replot "Set2_5yr_18d/4.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 2 band R 5yr_18d rs"
+#replot "Set3_5yr_rnd/1.dat" u ($3+a)/a:($2+b)/a w p pt 1 title "Type 1 band J 5yr_18d rnd"
+#replot "Set3_5yr_rnd/2.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 2 band J 5yr_18d rnd"
+#replot "Set3_5yr_rnd/3.dat" u ($3+a)/a:($2+b)/a w p pt 1 title "Type 1 band R 5yr_18d rnd"
+#replot "Set3_5yr_rnd/4.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 2 band R 5yr_18d rnd"
+replot "Set4_5yr_rnd50/1.dat" u ($3+a)/a:($2+b)/a w p pt 1 title "Type 1 band J 5yr_50d rnd"
+replot "Set4_5yr_rnd50/2.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 2 band J 5yr_50d rnd"
+replot "Set4_5yr_rnd50/3.dat" u ($3+a)/a:($2+b)/a w p pt 1 title "Type 1 band R 5yr_50d rnd"
+replot "Set4_5yr_rnd50/4.dat" u ($3+a)/a:($2+b)/a w p pt 6 title "Type 2 band R 5yr_50d rnd"
+pause -1
+set yr [0:5]
+replot
+pause -1
+set term postscript color
+set output "5d_37d_resample.eps"
+replot
+unset output

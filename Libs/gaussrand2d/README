@@ -1,0 +1,51 @@
+Pre-requisites: Fastest Fourier Transform in the West v 3, known better 
+as FFTW.
+
+Install with options:
+
+CFLAGS=-fPIC --prefix=/usr/local --enable-sse2 --enable-threads 
+--enable-shared --with-pic
+
+Make sure you are using GCC, not CLang.
+
+Check with gcc --version .
+It should clearly state whether it is CLang or GCC.
+
+If it is CLang, then do the following:
+
+Install homebrew. Then execute the following:
+
+$brew search gcc
+
+(Without the $, of course)
+Then You will find homebrew/dupes/apple-gcc42 as one of the options.
+Next execute
+
+$brew install homebrew/dupes/apple-gcc42
+
+Make sure the binaries have been linked.
+
+Finally, put the following line in your /etc/bashrc or ~/.bash_profile 
+(Mac):
+
+export PATH=/usr/local/bin:$PATH
+
+
+Then save changes, and either open a new terminal window or source the 
+rc file you changed to continue installing FFTW. Then you can execute 
+the following, in order, to make this library:
+
+make
+sudo make install
+make pywrapper
+
+
+After this, you should be able to execute the following:
+
+import gauss_rand_2d (in python)
+
+k = gauss_rand_2d.gauss_rand_2d ( nx , ny , variance , power )
+
+k will be returned as a numpy array ( nx , ny ) , double.
+
+Happy coding!

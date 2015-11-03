@@ -1,0 +1,22 @@
+This code generates fake data for (default) 100 objects (quasars) for a period of
+one year with data on each day, for R and J bands. Go to /src/ and then make the
+necessary changes to generator.c (which includes changing N_THR for a machine
+with more threads than 2, tnum for number of objects and N for number of days.
+
+
+As a random number generator, Dynamic Creator Mersenne Twister of period 2^521
+is used, which is thread-safe and fast. Refer to DCMT README for editing DCMT
+related parts.
+
+To include more bands, you need to incorporate those bands into the obj structure
+defined in the generator.c file, as well as defining the required min, max and
+width of the frequency range into the param.h file, and adding the requisite 
+generator in functions.h.
+
+This code utilizes 8-point Gauss Quadrature method for integrations. You can
+modify the requisite u[8] and w[8] arrays to incorporate higher quadrature
+methods.
+
+Use 'make' to make the requisite libraries and binaries. Then execute ./generator
+to run the code.
+

@@ -1,0 +1,23 @@
+set xrange [-3:3]
+set yrange [0:1.1]
+set samples 10000
+set grid
+plot exp(-x**2) title "Gaussian Distribution"
+set xlabel "Step/Sqrt(2*StepSize*Activity)"
+set ylabel "Probability*Sqrt(StepSize*Activity)/4"
+set title "Scaled Probability Distributions"
+#replot "100_0.0scaled.dat" w p notitle
+#replot "100_0.6scaled.dat" w p notitle 
+replot "1000_0.0scaled.dat" w p notitle
+replot "1000_0.2scaled.dat" w p notitle
+replot "1000_0.4scaled.dat" w p notitle
+replot "1000_0.6scaled.dat" w p notitle
+replot "1000_0.8scaled.dat" w p notitle
+#replot "10000_0.2scaled.dat" w p notitle
+#replot "10000_0.4scaled.dat" w p notitle
+replot "10000_0.6scaled.dat" w p notitle
+replot "10000_0.8scaled.dat" w p notitle
+set term postscript color
+set output "Scaled.eps"
+replot
+pause -1

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/137/trunk
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/trunk/LICENSE
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/16/trunk/INSTALL
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/109/trunk/setup.py
+END
+INSTALL_PYTHON
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/42/trunk/INSTALL_PYTHON
+END
+MANIFEST.in
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/46/trunk/MANIFEST.in
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/55/trunk/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/110/trunk/Makefile
+END

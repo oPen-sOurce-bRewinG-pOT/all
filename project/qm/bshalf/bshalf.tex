@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,color,tikz,graphicx,fixltx2e,float,enumerate,wrapfig,multirow}
+
+\setlength{\baselineskip}{6.0pt}    % 16 pt usual spacing between lines
+
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\parindent}{20pt}
+\setlength{\oddsidemargin}{0.5cm}
+\setlength{\evensidemargin}{0.5cm}
+\setlength{\marginparsep}{0.75cm}
+\setlength{\marginparwidth}{2.5cm}
+\setlength{\marginparpush}{1.0cm}
+\setlength{\textwidth}{160mm}
+\newcommand\half{\frac{1}{2}}
+\newcommand\thalf{\frac{3}{2}}
+\newcommand\lr{\left \langle}
+\newcommand\rr{\right \rangle}
+\newcommand\ls{\left |}
+\newcommand\rs{\right |}
+\newcommand\hs{\hat{S}}
+\newcommand\tbf[1]{\textbf{#1}}
+%\newcommand{\hs_}[1]{\hat{S}_{#1}}
+\newcommand\ua{\uparrow}
+\newcommand\da{\downarrow}
+\newcommand\hhalf{\frac{\hbar}{2}}
+\newcommand\rhalf{\frac{1}{\sqrt{2}}}
+\newcommand\ta{\tbf{Alice: }}
+\newcommand\tp{\tbf{Prof.: }}
+\newcommand\qbt[1]{QuBit}
+\newcommand\tans{\tbf{Ans.}}
+\newcommand\usp{\ls \ua \rr}
+\newcommand\dsp{\ls \da \rr}
+\newcommand\none{None of the above.}
+\newcommand\sg{Stern-Gerlach }
+\title{Basics of Spin-$\half$ Systems}
+\author{Dr. Suchetana Chatterjee}
+
+\begin{document}
+\maketitle
+\begin{enumerate}[\bf 1.]
+
+%need to prepare a tutorial for the basic S_z stuff as well.
+
+%need to write a small explanatory description of the Stern Gerlach experiment.
+
+\item In a sequential Stern-Gerlach experiment, where the incident beam is first split in the $\hat{i}$ direction, the $\usp _x$ is selected. This beam is now sent through another Stern-Gerlach apparatus, which splits the beam in $\hat{k}$ direction. The beam is then found to be split evenly in two discrete bands. From this description, which among the following is a possible representation of $\usp _x$ in the $\hs _z$ basis?
+\begin{enumerate}[\bf I.]
+\item $\rhalf \left(\begin{array}{c} 1 \\ 0 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 0 \\ 1 \end{array}\right)$.
+\item $\left(\begin{array}{c} 1 \\ 1 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 1 \\ 1 \end{array}\right)$.
+\end{enumerate}
+\vskip 1cm
+\tans The beam is split evenly, which means the probability of finding a particle in the beam with $\usp _z$ or $\dsp _z$ is $\half$. But, since the particle was in the $\usp _x$ beam, the initial state of the particle was $\usp _x$. Hence, we can conclude,
+$$
+\ls \lr \ua _x \vphantom{.}\rs \left. \ua _z \rr \rs^2 = \ls \lr \ua _x \vphantom{.}\rs \left. \da _z \rr \rs^2 = \half.
+$$
+From this, we can guess the following possible representation:
+$$
+\begin{aligned}
+\usp _x &= \rhalf \left(\usp _z + \dsp _z \right) \\
+	&= \rhalf \left[\left(\begin{array}{c} 1 \\ 0 \end{array}\right)+\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\right] \\
+	&= \rhalf \left(\begin{array}{c} 1 \\ 1 \end{array}\right),
+\end{aligned}
+$$
+which is {\bf IV}.
+\vskip 1.5cm
+\item In the basis of $\hs _z$. how do you express $\dsp _x$?
+\begin{enumerate}[\bf I.]
+\item $\left(\begin{array}{c} 1 \\ 1 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 0 \\ 1 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 1 \\ -1 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 1 \\ 0 \end{array}\right)$.
+\end{enumerate}
+\vskip 1cm
+\tans Since $\dsp_x$ is orthonormal to $\usp_x$, and $\usp_x$ is given by $\rhalf \left(\begin{array}{c} 1 \\ 1 \end{array}\right)$, we conclude that $\dsp_x$ is $\rhalf \left(\begin{array}{c} 1 \\ -1 \end{array}\right)$, which is {\bf III}.
+\vskip 1.5cm
+\item In the previous sequential \sg experiment, suppose we replace the X-\sg apparatus with an Y-\sg apparatus, select the $\usp_y$ beam instead, and send it through the the Z-\sg apparatus, only to find the same even splitting. Then, which among the following is a possible representation of $\usp _y$ in the $\hs_z$ basis?
+\begin{enumerate}[\bf I.]
+\item $\rhalf \left(\begin{array}{c} 1 \\ i \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 0 \\ 1 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 1 \\ -1 \end{array}\right)$.
+\item $\rhalf \left(\begin{array}{c} 1 \\ 0 \end{array}\right)$.
+\end{enumerate}
+\vskip 1cm
+\tans Here also, following Problem {\bf 1}, we conclude that:
+$$
+\ls \lr \ua _y \vphantom{.}\rs \left. \ua _z \rr \rs^2 = \ls \lr \ua _y \vphantom{.}\rs \left. \da _z \rr \rs^2 = \half.
+$$
+So,
+$$
+\ls \lr \ua _y \vphantom{.}\rs \left. \ua _z \rr \rs = \ls \lr \ua _y \vphantom{.}\rs \left. \da _z \rr \rs = \rhalf.
+$$ 
+This is the only conclusion we can draw from the above experiment. \\
+But certainly, the $\usp_y$ state can be written as $\lr \ua _y \vphantom{.}\rs \left. \ua _z \rr \usp_z + \lr \ua _y \vphantom{.}\rs \left. \da _z \rr \dsp_z$, where the coefficients of $\usp_z$ and $\dsp_z$ can be complex. Since, in dealing with the $\usp_x$ and $\usp_y$ states, we used real coefficients, and we are forced to keep the absolute values of the coefficients $\rhalf$, we are thus forced to write $\lr \ua _y \vphantom{.}\rs \left. \ua _z \rr$ and $\lr \ua _y \vphantom{.}\rs \left. \da _z \rr$ as $\rhalf e^{i\theta}$, where $\theta$ is an arbitrary phase, which never goes into the expectation values, the quantities of physical interest. That being the case, we have some freedom of choosing $\theta$ for the two coefficients, and we exploit this to write $\lr \ua _y \vphantom{.}\rs \left. \ua _z \rr = \rhalf$ and $\lr \ua _y \vphantom{.}\rs \left. \da _z \rr= \rhalf e^{i\delta}$. \\
+But, to determine this $\delta$, we need to have some more information. And that information is actually embedded deep inside the experimental descriptions accompanying the question. A good physical theory does not depend on preferential directions, and indeed, the \sg apparatus have no way of realizing what axes we are labeling them with. So, had the $\usp_y$ beam been passed through a \sg apparatus aligned in the X direction, we would have expected the experimental result to be the same: a two way splitting. In this light,
+$$
+\ls \lr \ua _y \vphantom{.}\rs \left. \ua _x \rr \rs^2 = \ls \lr \ua _y \vphantom{.}\rs \left. \da _x \rr \rs^2 = \half.
+$$
+\newpage
+We can replace $\usp_x$ and $\dsp_x$ by their representations in the $\hs_z$ basis to obtain the following:
+$$
+\alpha
+$$
+\end{enumerate}
+\end{document}
+

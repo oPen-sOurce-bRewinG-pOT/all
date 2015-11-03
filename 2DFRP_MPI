@@ -1,0 +1,447 @@
+Last login: Thu Aug  6 14:23:04 on ttys001
+Sunips-MacBook:mpi sunip$ mpirun -hetero-nodes -H localhost,10.0.14.1 $HOME/Codes/mpi/frp
+sunip@10.0.14.1's password: 
+Permission denied, please try again.
+sunip@10.0.14.1's password: 
+
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: /Users/sunip/Codes/mpi/frp
+Node: 10.0.14.1
+
+while attempting to start process rank 1.
+--------------------------------------------------------------------------
+Sunips-MacBook:mpi sunip$ mpirun -hetero-nodes -H localhost,10.0.14.1 ./frpsunip@10.0.14.1's password: 
+
+
+n_parts is 500000 for thread 0.
+
+n_parts is 500000 for thread 1.
+
+Generated for 1 thread.
+Generated for 0 thread.
+754073 of 1000000 made their return successfully for steps 10.
+So the probability of first return is 0.754073 for steps 10.
+920475 of 1000000 made their return successfully for steps 100.
+So the probability of first return is 0.920475 for steps 100.
+974793 of 1000000 made their return successfully for steps 1000.
+So the probability of first return is 0.974793 for steps 1000.
+
+
+
+The whole operation took 0.960698s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np4 -hetero-nodes -H localhost,10.0.14.1 ./frp 
+----------------------------------------------------------------------------
+Open MPI has detected that a parameter given to a command line
+option does not match the expected format:
+
+  Option: n
+  Param:  -hetero-nodes
+
+This is frequently caused by omitting to provide the parameter
+to an option that requires one. Please check the command line and try again.
+----------------------------------------------------------------------------
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./frp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 250000 for thread 0.
+
+n_parts is 250000 for thread 1.
+
+n_parts is 250000 for thread 2.
+
+n_parts is 250000 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+753875 of 1000000 made their return successfully for steps 10.
+So the probability of first return is 0.753875 for steps 10.
+920588 of 1000000 made their return successfully for steps 100.
+So the probability of first return is 0.920588 for steps 100.
+974811 of 1000000 made their return successfully for steps 1000.
+So the probability of first return is 0.974811 for steps 1000.
+
+
+
+The whole operation took 0.738587s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./frp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 250000 for thread 0.
+n_parts is 250000 for thread 1.
+
+
+n_parts is 250000 for thread 2.
+
+n_parts is 250000 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+753875 of 1000000 made their return successfully for steps 10.
+So the probability of first return is 0.753875 for steps 10.
+920588 of 1000000 made their return successfully for steps 100.
+So the probability of first return is 0.920588 for steps 100.
+974811 of 1000000 made their return successfully for steps 1000.
+So the probability of first return is 0.974811 for steps 1000.
+992053 of 1000000 made their return successfully for steps 10000.
+So the probability of first return is 0.992053 for steps 10000.
+997359 of 1000000 made their return successfully for steps 100000.
+So the probability of first return is 0.997359 for steps 100000.
+999206 of 1000000 made their return successfully for steps 1000000.
+So the probability of first return is 0.999206 for steps 1000000.
+
+
+
+The whole operation took 9.201799s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./frp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 250000 for thread 0.
+
+n_parts is 250000 for thread 1.
+
+n_parts is 250000 for thread 2.
+
+n_parts is 250000 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+999919 of 1000000 made their return successfully for steps 100000000.
+So the probability of first return is 0.999919 for steps 100000000.
+
+
+
+The whole operation took 72.255844s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./frp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 25000 for thread 0.
+
+n_parts is 25000 for thread 1.
+
+n_parts is 25000 for thread 2.
+
+n_parts is 25000 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+99997 of 100000 made their return successfully for steps 1000000000.
+So the probability of first return is 0.999970 for steps 1000000000.
+
+
+
+The whole operation took 33.033016s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./frp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 25000 for thread 0.
+
+n_parts is 25000 for thread 1.
+
+n_parts is 25000 for thread 2.
+
+n_parts is 25000 for thread 3.
+
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 3 thread.
+Generated for 0 thread.
+100000 of 100000 made their return successfully for steps 10000000000.
+So the probability of first return is 1.000000 for steps 10000000000.
+
+
+
+The whole operation took 136.768557s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./2dfrp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 25000 for thread 0.
+
+n_parts is 25000 for thread 1.
+
+n_parts is 25000 for thread 2.
+
+n_parts is 25000 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+ ^CKilled by signal 2.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./2dfrp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 25000 for thread 0.
+
+n_parts is 25000 for thread 1.
+
+n_parts is 25000 for thread 2.
+
+n_parts is 25000 for thread 3.
+
+Generated for 2 thread.
+Generated for 3 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+77881 of 100000 made their return successfully for steps 100000.
+So the probability of first return is 0.778810 for steps 100000.
+
+
+
+The whole operation took 15.954681s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./2dfrp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 25000 for thread 0.
+
+n_parts is 25000 for thread 1.
+
+n_parts is 25000 for thread 2.
+
+n_parts is 25000 for thread 3.
+
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 3 thread.
+Generated for 0 thread.
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+[[44816,1],3][btl_tcp_endpoint.c:608:mca_btl_tcp_endpoint_start_connect] from sunip-Asus to: Sunips-MacBook Unable to connect to the peer 10.0.14.118 on port 260: Network is unreachable
+
+[sunip-Asus:3977] *** An error occurred in MPI_Reduce
+[sunip-Asus:3977] *** reported by process [139774057775105,139771120713731]
+[sunip-Asus:3977] *** on communicator MPI_COMM_WORLD
+[sunip-Asus:3977] *** MPI_ERR_INTERN: internal error
+[sunip-Asus:3977] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[sunip-Asus:3977] ***    and potentially your MPI job)
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./2dfrp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 25000 for thread 0.
+
+n_parts is 25000 for thread 1.
+
+n_parts is 25000 for thread 2.
+
+n_parts is 25000 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 0 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 0 is at 2500 now!
+ID 2 is at 2500 now!
+ID 3 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 0 is at 2500 now!
+83256 of 100000 made their return successfully for steps 10000000.
+So the probability of first return is 0.832560 for steps 10000000.
+
+
+
+The whole operation took 1269.028853s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./2dfrp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 2500 for thread 0.
+
+n_parts is 2500 for thread 1.
+
+n_parts is 2500 for thread 2.
+
+n_parts is 2500 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+8380 of 10000 made their return successfully for steps 10000000.
+So the probability of first return is 0.838000 for steps 10000000.
+
+
+
+The whole operation took 110.418498s to complete.
+Sunips-MacBook:mpi sunip$ mpirun -np 4 -hetero-nodes -H localhost,10.0.14.1 ./2dfrp
+sunip@10.0.14.1's password: 
+
+
+
+
+n_parts is 2500 for thread 0.
+
+n_parts is 2500 for thread 1.
+
+n_parts is 2500 for thread 2.
+
+n_parts is 2500 for thread 3.
+
+Generated for 3 thread.
+Generated for 2 thread.
+Generated for 1 thread.
+Generated for 0 thread.
+ID 0 is at 2500 now!
+ID 1 is at 2500 now!
+ID 3 is at 2500 now!
+ID 2 is at 2500 now!
+8527 of 10000 made their return successfully for steps 100000000.
+So the probability of first return is 0.852700 for steps 100000000.
+
+
+
+The whole operation took 1024.711001s to complete.
+Sunips-MacBook:mpi sunip$ 

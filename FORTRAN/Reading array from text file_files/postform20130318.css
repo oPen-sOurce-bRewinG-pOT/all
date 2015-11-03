@@ -1,0 +1,261 @@
+@charset "utf-8";
+/* CSS Document
+   SETS UP POST FORM AT THE BOTTOM OF threadminder.cfm, viewthread.cfm, postedit.cfm, faq.cfm, faqedit.cfm, links.cfm
+ */
+
+
+.selected {border:1px solid red; color:green;}
+.fradio, .icheck {
+	display:none;
+}
+.postformtable {width:99.9%;background-color:#eee;}
+#postform {
+	width:99.9%;
+}
+#postform th {width:100px;}
+#postform th, #postform label {text-align:left;color:black;font-weight:bold;}
+#postform th, #postform td {border:1px solid #ddd;padding:4px!important;}
+.postformtable .postformright {
+	width:170px;
+	max-width:170px;
+	padding-top:40px!important;
+	text-align:center;
+}
+#postform h3 {
+	margin-top:8px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #cbd8fa;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cbd8fa;
+	box-shadow:inset 0px 1px 0px 0px #cbd8fa;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7aa0ff), color-stop(1, #6681c4) );
+	background:-moz-linear-gradient( center top, #7aa0ff 5%, #6681c4 100% );
+	filter:progid:DXImageTransFORM.Microsoft.gradient(startColorstr='#7aa0ff', endColorstr='#6681c4');
+	background-color:#7aa0ff;
+	color:#FFF;
+	font-family:'arial';
+	font-size:20px;
+	font-weight:bold;
+	padding:4px 6px 4px 6px;
+	text-decoration:none;
+	text-shadow:1px 1px 1px #000;
+	opacity:1.0;
+	filter:alpha(opacity=100);
+	text-align:center;
+}
+#postform h4 {
+	text-align:center;
+	font-size:16px;
+	margin-top:15px;
+}
+#postform .postpolicy {
+	font-size:0.8em;
+	text-align:center;
+	margin:25px 5px;
+	padding:8px 8px 10px 8px;
+	border:1px solid #bbb;
+	background-color:#ddd;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	-moz-box-shadow:inset 2px 2px 3px #555;
+	-webkit-box-shadow:inset 2px 2px 3px #555;
+	box-shadow:inset 2px 2px 3px #555;
+}
+#postform .postpolicy a {
+	font-weight:bold;
+}
+
+#postform .tdttype, #postform .tdoptions {
+	padding: 3px 0;
+}
+#postform .tdttype span, #postform .tdoptions span {
+	border:1px solid #e4e4e4;
+	border-radius:2px;
+	margin:3px 6px;
+	padding:3px;
+}
+#postform .tdttype span:hover, #postform .tdoptions span:hover {
+	background-color:#f3f3f3;
+}
+#postform .tdttype label, #postform .tdoptions label {
+	background-position: 0 0;
+	background-repeat:no-repeat;
+	padding:0 0 4px 18px;
+	color:#222222;
+	font-weight:normal;
+}
+#postform label.rq {
+	background-image:url(/img/icons/sm/question.png)
+}
+#postform label.rn {
+	background-image:url(/img/icons/sm/newspaper.png)
+}
+#postform label.rt {
+	background-image:url(/img/icons/sm/lightbulb.png)
+}
+#postform label.rr {
+	background-image:url(/img/icons/sm/book.png)
+}
+
+#postform label.cemail {
+	background-image:url(/img/icons/sm/email.png);
+}
+#postform label.cemot {
+	background-image:url(/img/icons/sm/emotion_smile.png);
+}
+#postform label.ctgml {
+	background-image:url(/img/icons/sm/elements.png);
+}
+#postform label.csig {
+	background-image:url(/img/icons/sm/text_signature.png);
+}
+
+#fq span {
+	background-image:url(/img/icons/sm/question.png)
+}
+#fn span {
+	background-image:url(/img/icons/sm/newspaper.png)
+}
+#ft span {
+	background-image:url(/img/icons/sm/lightbulb_off.png)
+}
+#ft.flinksel span {background-image:url(/img/icons/sm/lightbulb.png);}
+#ft:hover span {background-image:url(/img/icons/sm/lightbulb.png);}
+#fr span {
+	background-image:url(/img/icons/sm/book.png)
+}
+#cemail span {
+	background-image:url(/img/icons/sm/email.png);
+}
+#cemot span {
+	background-image:url(/img/icons/sm/emotion_smile.png);
+}
+#ctgml span {
+	background-image:url(/img/icons/sm/elements.png);
+}
+#csig span {
+	background-image:url(/img/icons/sm/text_signature.png);
+}
+
+textarea, #postform input[type="text"] {
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border-width:1px;
+	border-color:#7C9DF6;
+	border-style:solid;
+	padding:7px;
+	background: -webkit-gradient(linear, left top, left 30, from(#FFFFFF), color-stop(4%, #D5DDF3), to(#FFFFFF));  
+    background: -moz-linear-gradient(top, #FFFFFF, #D5DDF3 1px, #FFFFFF 30px);  
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5DDF3', endColorstr='#FFFFFF');
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+	outline:none;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;   /* Firefox, other Gecko */
+    box-sizing: border-box; 
+	width:100%!important;
+	position:relative;
+}
+textarea:focus, textarea:active, #postform input[type="text"]:focus, #postform input[type="text"]:active {
+	border-color:#4D6196;
+	outline:none;
+    box-shadow: rgba(101,127,197, 0.5) 0px 0px 8px;  
+    -moz-box-shadow: rgba(101,127,197, 0.5) 0px 0px 8px;  
+    -webkit-box-shadow: rgba(101,127,197, 0.5) 0px 0px 8px;
+}
+textarea.error, input[type="text"].error:active, input[type="text"].error {
+	border-color:#f00!important;
+	background: -webkit-gradient(linear, left top, left 30, from(#FFFFFF), color-stop(4%, #FFDDF3), to(#fff9f9))!important;  
+    background: -moz-linear-gradient(top, #fff9f9, #FFDDF3 1px, #fff9f9 30px)!important;  
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD5DDF3', endColorstr='#fff9f9')!important;
+}
+#attachment {
+padding-left:22px!important;
+	background:  url(/img/icons/sm/attach.png) 6px 50% no-repeat!important;
+/*	background:  url(/img/icons/sm/attach.png) 6px 50% no-repeat,-webkit-gradient(linear, left top, left 30, from(#FFFFFF), color-stop(4%, #D5DDF3), to(#FFFFFF))!important;  
+    background:  url(/img/icons/sm/attach.png) 5px 50% no-repeat,-moz-linear-gradient(top, #FFFFFF, #D5DDF3 1px, #FFFFFF 30px)!important;  
+    background:  url(/img/icons/sm/attach.png) 5px 50% no-repeat,-ms-linear-gradient(top, #FFFFFF, #D5DDF3)!important;  
+	background:url(/img/icons/sm/attach.png) 5px 50% no-repeat,filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5DDF3', endColorstr='#FFFFFF')!important;*/
+}
+/* Check boxes */
+#formopts {
+list-style: none;
+margin: 0 auto;
+padding: 0;
+text-align:center;
+}
+ 
+#formopts li {
+margin-right: 10px;
+position: relative;
+display:inline;
+}
+/* Overlay */
+#modalOverlay {height:100%; width:100%; position:fixed; left:0; top:0; z-index:3000; background-color:#000;}
+/* Container */
+#modalContainer {position:fixed; margin:0 auto 0 auto; left:50%; top:10%; z-index:3100; background-color:#fff; border:3px solid #3C769D;}
+#modalContainer a.modalCloseImg { background:transparent url(../../_images/icons/close.png) no-repeat top left; width:16px; height:16px; display:inline; z-index:3200; position:absolute; top:-14px; right:-14px; cursor:pointer;}
+
+/*#modalContainer {
+	width:760px;
+	height:450px;
+	margin-left:-380px;
+}*/
+#modalContainer iframe {
+	width:100%; height:100%;
+	border:none;
+}
+	#postform a.ttip {
+		background-color:#eee;
+		padding:2px 5px;
+		-moz-border-radius:2px;
+		border-radius:2px;
+		border: 1px solid #ccc;
+		font-size:11px;
+		line-height:11px;
+		font-weight:bold;
+		text-align:center;
+		display:block;
+		text-decoration:none;
+	}
+	#postform a.ttip:hover {
+		color:#2C459C;
+		background-color:#f3f3f3;
+		border:1px solid #aaa;
+	}
+	
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2010 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: basic.css 257 2010-07-27 23:06:56Z emartin24 $
+ */
+
+#basic-modal-content {display:none;}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg {background:url(/img/icons/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container h3 {color:#84b8d9;}
+
+	.modaltip {
+		display:none;
+		border:1px solid black;
+		background-color:#FF6;
+		color:black;
+		font-weight:bold;
+		padding:10px 20px;
+	}
+	.modaltip a {color:#00F!important;}
+	

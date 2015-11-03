@@ -1,0 +1,2 @@
+#!/bin/bash
+python scaling.py 10000_0.6out_n.dat 10000_0.6scaled.dat 10000 0.6

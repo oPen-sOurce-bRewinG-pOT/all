@@ -1,0 +1,3 @@
+gcc -Wall -I/home/sunip/RC/extreme-deconvolution-read-only/src gsltry.c -c -o gsltry.o
+
+gcc -O3 -Wall -L/usr/lib/ gsltry.o -o gsltry -lgsl -lgslcblas -lm

@@ -1,0 +1,12 @@
+set xrange [-300:300]
+plot "1000_0.0out_n.dat" w p title "Laziness=0.0 Timestep=1000"
+replot "1000_0.2out_n.dat" w p title "Laziness=0.2 Timestep=1000"
+replot "1000_0.4out_n.dat" w p title "Laziness=0.4 Timestep=1000"
+replot "1000_0.6out_n.dat" w p title "Laziness=0.6 Timestep=1000"
+replot "1000_0.8out_n.dat" w p title "Laziness=0.8 Timestep=1000"
+replot "10000_0.0out_n.dat" w p title "Laziness=0.0 Timestep=10000"
+replot "10000_0.2out_n.dat" w p title "Laziness=0.2 Timestep=10000"
+replot "10000_0.4out_n.dat" w p title "Laziness=0.4 Timestep=10000"
+replot "10000_0.6out_n.dat" w p title "Laziness=0.6 Timestep=10000"
+replot "10000_0.8out_n.dat" w p title "Laziness=0.8 Timestep=10000"
+pause -1

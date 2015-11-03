@@ -1,0 +1,19 @@
+set xr [-5e12:7e12]
+set yr [-5e12:7e12]
+#set zr [-2.5e12:2.5e12]
+splot "poss.dat" u 2:3:4 every 20 w l title "Sun"
+replot "posvvs.dat" u 5:6:7 every 50 w l title "Mercury"
+replot "posvvs.dat" u 8:9:10 every 50 w l title "Venus"
+replot "posse.dat" u 11:12:13 every 40 w l title "Earth"
+replot "posvs.dat" u 14:15:16 every 100 w l title "Mars"
+replot "poss.dat" u 17:18:19 every 100 w l title "Jupiter"
+replot "posl.dat" u 8:9:10 every 100 w l title "Saturn"
+replot "posl.dat" u 11:12:13 every 100 w l title "Uranus"
+replot "posl.dat" u 14:15:16 every 100 w l title "Neptune"
+replot "posl.dat" u 17:18:19 every 100 w l title "Pluto"
+#replot "posse.dat" u 32:33:34 w l title "Moon"
+#replot "poss.dat" u 35:36:37 w l title "Io"
+#replot "poss.dat" u 38:39:40 w l title "Europa"
+#replot "poss.dat" u 41:42:43 w l title "Ganymede"
+#replot "poss.dat" u 44:45:46 w l title "Callisto"
+pause -1

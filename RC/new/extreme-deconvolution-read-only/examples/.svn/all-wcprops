@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/137/trunk/examples
+END
+TF.out
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/trunk/examples/TF.out
+END
+TF.dat
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/trunk/examples/TF.dat
+END
+inputdata.dat
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/examples/inputdata.dat
+END
+IC.dat
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/trunk/examples/IC.dat
+END
+leave_one_out.pro
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/examples/leave_one_out.pro
+END
+result.dat
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/examples/result.dat
+END
+ploterror.pro
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/examples/ploterror.pro
+END
+fit_tf.pro
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/87/trunk/examples/fit_tf.pro
+END
+exd_jackerr_example.pro
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/137/trunk/examples/exd_jackerr_example.pro
+END

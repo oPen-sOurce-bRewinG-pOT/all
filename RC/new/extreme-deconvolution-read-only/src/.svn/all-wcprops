@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/112/trunk/src
+END
+parse_option.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/src/parse_option.c
+END
+read_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/4/trunk/src/read_data.c
+END
+proj_gauss_mixtures_IDL.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/52/trunk/src/proj_gauss_mixtures_IDL.c
+END
+logsum.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/src/logsum.c
+END
+read_till_sep.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/src/read_till_sep.c
+END
+bovy_isfin.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/src/bovy_isfin.c
+END
+write_model.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/trunk/src/write_model.c
+END
+calc_splitnmerge.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/52/trunk/src/calc_splitnmerge.c
+END
+bovy_det.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/src/bovy_det.c
+END
+proj_gauss_mixtures.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/112/trunk/src/proj_gauss_mixtures.c
+END
+proj_gauss_mixtures.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/83/trunk/src/proj_gauss_mixtures.h
+END
+bovy_randvec.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/src/bovy_randvec.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/trunk/src/main.c
+END
+proj_gauss_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/src/proj_gauss_main.h
+END
+proj_EM_step.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/112/trunk/src/proj_EM_step.c
+END
+read_IC.c
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/src/read_IC.c
+END
+cleanup.c
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/src/cleanup.c
+END
+normalize_row.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/66/trunk/src/normalize_row.c
+END
+minmax.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/src/minmax.c
+END
+proj_EM.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/52/trunk/src/proj_EM.c
+END
+splitnmergegauss.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/src/splitnmergegauss.c
+END

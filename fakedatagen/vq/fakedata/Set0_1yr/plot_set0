@@ -1,0 +1,11 @@
+a = log(10)
+b = log(365.25)
+set xl "Log(Sigma)"
+set yl "Log(Tau)"
+plot "Set0_1yr/1.dat" u ($3+a)/a:($2+b)/a w p pt 2 title "Type 1 band J 1yr"
+replot "Set0_1yr/2.dat" u ($3+a)/a:($2+b)/a w p pt 4 title "Type 2 band J 1yr"
+replot "Set0_1yr/3.dat" u ($3+a)/a:($2+b)/a w p pt 2 title "Type 1 band R 1yr"
+replot "Set0_1yr/4.dat" u ($3+a)/a:($2+b)/a w p pt 4 title "Type 2 band R 1yr"
+pause -1
+replot
+pause -1

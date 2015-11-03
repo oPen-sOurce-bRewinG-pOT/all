@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/136/trunk/addons
+END
+exd_jackerr.pro
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/136/trunk/addons/exd_jackerr.pro
+END
+weighted_kstwo.pro
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/61/trunk/addons/weighted_kstwo.pro
+END
+calc_loglike.pro
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/62/trunk/addons/calc_loglike.pro
+END
+sample_gaussians.pro
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/64/trunk/addons/sample_gaussians.pro
+END
+calc_membership_prob.pro
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/77/trunk/addons/calc_membership_prob.pro
+END

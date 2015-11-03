@@ -1,0 +1,221 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	3
+<table>
+Table1	40	2	10/29/2014 3:12:44 PM
+geometry	0	0	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel		2
+<data>
+0	1502	0.15
+1	1603	0.174
+2	1698	0.201
+3	1799	0.24
+4	1906	0.291
+5	1952	0.322
+6	2000	0.358
+7	2101	0.456
+8	2155	0.523
+9	2200	0.586
+10	2247	0.66
+11	2300	0.737
+12	2325	0.767
+13	2349	0.788
+14	2376	0.797
+15	2400	0.805
+16	2427	0.796
+17	2452	0.78
+18	2475	0.756
+19	2500	0.728
+20	2526	0.695
+21	2550	0.633
+22	2603	0.596
+23	2703	0.488
+24	2801	0.407
+25	2902	0.348
+26	3005	0.301
+27	3102	0.268
+28	3200	0.241
+29	3299	0.22
+30	3400	0.202
+31	3500	0.186
+32	3600	0.174
+33	3700	0.162
+34	3801	0.154
+35	3903	0.144
+36	4000	0.137
+37	5001	0.092
+38	6000	0.07
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	10/29/2014 3:20:01 PM
+geometry	maximized
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	10	7	1005	560
+<PageGeometry>0.00976562	0.0120482	0.981445	0.963855</PageGeometry>
+PlotTitle	Title	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	%(?X)	%(?Y)		%(?Y)	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	MS Shell Dlg 2	14	75	0	0	0
+ScaleFont0	MS Shell Dlg 2	11	75	0	0	0
+ScaleFont1	MS Shell Dlg 2	11	75	0	0	0
+ScaleFont2	MS Shell Dlg 2	11	75	0	0	0
+ScaleFont3	MS Shell Dlg 2	11	75	0	0	0
+AxisFont0	MS Shell Dlg 2	11	50	0	0	0
+AxisFont1	MS Shell Dlg 2	11	50	0	0	0
+AxisFont2	MS Shell Dlg 2	11	50	0	0	0
+AxisFont3	MS Shell Dlg 2	11	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#000000	#000000	#000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_2	1	0	#000000	0	1	7	10	#ff00ff	#000000	0	#000000	14	1	2	0	0	39	1
+<Function>
+<Type>0</Type>
+<Title>NonLinearFit1</Title>
+<Expression>1/sqrt(a0^2+(a1*x-a2/x)^2)</Expression>
+<Variable>x</Variable>
+<Range>1502	6000</Range>
+<Points>100</Points>
+<Constant>a0	1.24576258853991</Constant>
+<Constant>a1	-0.0028444978188197</Constant>
+<Constant>a2	-16311.8499291296</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#ff0000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	0.9	0	10	5	0	0
+scale	1	0	0.9	0	10	5	0	0
+scale	2	1000	7000	0	7	5	0	0
+scale	3	1000	7000	0	7	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>26.954177897574</x>
+<y>966.10169491525</y>
+<right>293.800539083558</right>
+<bottom>867.796610169491</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>0</visible>
+<Text>
+\l(1)%(1)
+\l(2)%(2)
+</Text>
+<Font>MS Shell Dlg 2	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<table>
+Table2	30	2	10/29/2014 3:23:21 PM
+geometry	272	132	445	220	active
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel		2
+<data>
+</data>
+</table>
+<open>1</open>
+<log>
+[10/29/2014 3:21:17 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: 1/sqrt(a0^2+(a1*x-a2/x)^2)
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = 1.502000000000000e+03 to x = 6.000000000000000e+03
+a0 = 1.000000000000000e+00 +/- 2.313634100105860e+11
+a1 = 1.000000000000000e+00 +/- 4.704132182454941e+02
+a2 = 1.000000000000000e+00 +/- 2.311618336744991e+11
+--------------------------------------------------------------------------------------
+Chi^2/doF = 2.592968147553038e-01
+R^2 = -2.85096666437031
+Adjusted R^2 = -3.18104952131634
+RMSE (Root Mean Squared Error) = 0.509211954646888
+RSS (Residual Sum of Squares) = 9.33468533119094
+---------------------------------------------------------------------------------------
+Iterations = 1
+Status = iteration is not making progress towards solution
+---------------------------------------------------------------------------------------
+[10/29/2014 3:21:33 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: 1/sqrt(a0^2+(a1*x-a2/x)^2)
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = 1.502000000000000e+03 to x = 6.000000000000000e+03
+a0 = 1.245762588539907e+00 +/- 3.146053646542675e-03
+a1 = -2.844497818819698e-03 +/- 1.385269011031264e-05
+a2 = -1.631184992912960e+04 +/- 7.973585232637285e+01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 3.071540809621176e-05
+R^2 = 0.999543827745155
+Adjusted R^2 = 0.999504727266168
+RMSE (Root Mean Squared Error) = 0.00554214832860072
+RSS (Residual Sum of Squares) = 0.00110575469146362
+---------------------------------------------------------------------------------------
+Iterations = 8
+Status = success
+---------------------------------------------------------------------------------------
+</log>

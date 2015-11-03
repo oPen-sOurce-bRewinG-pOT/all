@@ -1,0 +1,8 @@
+set xrange [-50:50]
+set yrange [0:1]
+plot "100_0.0out_n.dat" w p pt 6
+replot "100_0.2out_n.dat" w p pt 6
+replot "100_0.4out_n.dat" w p pt 6
+replot "100_0.6out_n.dat" w p pt 6
+replot "100_0.8out_n.dat" w p pt 6
+pause -1

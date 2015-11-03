@@ -1,0 +1,334 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	2
+<table>
+Table1	30	2	10/30/2014 3:39:32 PM
+geometry	0	0	445	220	hidden
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel		2
+<data>
+0	0	9.76
+1	10	9.45
+2	20	8.32
+3	30	7.2
+4	40	5.76
+5	50	4.71
+6	60	3.49
+7	70	2.35
+8	80	0.83
+9	90	0
+10	100	1.34
+11	110	2.56
+12	120	3.72
+13	130	5.13
+14	140	6.27
+15	150	7.59
+16	160	8.74
+17	170	9.55
+18	180	9.76
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	10/30/2014 3:44:00 PM
+geometry	maximized	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	7	6	669	386
+<PageGeometry>0.0102639	0.015	0.980938	0.965</PageGeometry>
+PlotTitle	Title	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	%(?X)	%(?Y)		%(?Y)	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	MS Shell Dlg 2	10	75	0	0	0
+ScaleFont0	MS Shell Dlg 2	8	75	0	0	0
+ScaleFont1	MS Shell Dlg 2	8	75	0	0	0
+ScaleFont2	MS Shell Dlg 2	8	75	0	0	0
+ScaleFont3	MS Shell Dlg 2	8	75	0	0	0
+AxisFont0	MS Shell Dlg 2	8	50	0	0	0
+AxisFont1	MS Shell Dlg 2	8	50	0	0	0
+AxisFont2	MS Shell Dlg 2	8	50	0	0	0
+AxisFont3	MS Shell Dlg 2	8	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#000000	#000000	#000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_2	1	0	#000000	0	1	7	10	#ff0000	#000000	0	#000000	14	1	2	0	0	29	1
+<Function>
+<Type>0</Type>
+<Title>NonLinearFit1</Title>
+<Expression>a*sqrt((cos(x*(2*asin(1))/180))^2)</Expression>
+<Variable>x</Variable>
+<Range>0	180</Range>
+<Points>100</Points>
+<Constant>a	8.82726993121236</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>NonLinearFit2</Title>
+<Expression>a*sqrt((cos(x*(2*asin(1))/180))^2)</Expression>
+<Variable>x</Variable>
+<Range>0	180</Range>
+<Points>100</Points>
+<Constant>a	8.827269932085</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#00ff00</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>NonLinearFit3</Title>
+<Expression>a*sqrt((cos(x*(2*asin(1))/180))^2)</Expression>
+<Variable>x</Variable>
+<Range>0	180</Range>
+<Points>100</Points>
+<Constant>a	8.827269932085</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#ff00ff</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	10	0	6	5	0	0
+scale	1	0	10	0	6	5	0	0
+scale	2	0	180	0	5	5	0	0
+scale	3	0	180	0	5	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>26.954177897574</x>
+<y>966.10169491525</y>
+<right>293.800539083558</right>
+<bottom>867.796610169491</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)%(1)
+\l(2)%(2)
+\l(3)%(3)
+\l(4)%(4)
+</Text>
+<Font>MS Shell Dlg 2	8	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>
+<log>
+[10/30/2014 3:44:42 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*(cos(x))^2
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 7.813519318137174e+00 +/- 1.521306231680435e+00
+--------------------------------------------------------------------------------------
+Chi^2/doF = 1.774819166083447e+01
+R^2 = -0.678298269672622
+Adjusted R^2 = -0.777021697300423
+RMSE (Root Mean Squared Error) = 4.21286027074652
+RSS (Residual Sum of Squares) = 319.46744989502
+---------------------------------------------------------------------------------------
+Iterations = 2
+Status = cannot reach the specified tolerance in F
+---------------------------------------------------------------------------------------
+[10/30/2014 3:45:28 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*(cos(x*(2*asin(1))/180))^2
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 1.002211330802959e+01 +/- 2.570517604508942e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 5.120859585416191e-01
+R^2 = 0.951576307346253
+Adjusted R^2 = 0.948727854837209
+RMSE (Root Mean Squared Error) = 0.715601815636056
+RSS (Residual Sum of Squares) = 9.21754725374914
+---------------------------------------------------------------------------------------
+Iterations = 2
+Status = cannot reach the specified tolerance in F
+---------------------------------------------------------------------------------------
+[10/30/2014 3:45:49 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269931212356e+00 +/- 2.165635070950536e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.689975273177694e-01
+R^2 = 0.955650820454283
+Adjusted R^2 = 0.953042045186888
+RMSE (Root Mean Squared Error) = 0.684833941417749
+RSS (Residual Sum of Squares) = 8.44195549171985
+---------------------------------------------------------------------------------------
+Iterations = 2
+Status = cannot reach the specified tolerance in F
+---------------------------------------------------------------------------------------
+[10/30/2014 3:47:35 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.1
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269931212356e+00 +/- 2.165635070950536e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.689975273177694e-01
+R^2 = 0.955650820454283
+Adjusted R^2 = 0.953042045186888
+RMSE (Root Mean Squared Error) = 0.684833941417749
+RSS (Residual Sum of Squares) = 8.44195549171985
+---------------------------------------------------------------------------------------
+Iterations = 2
+Status = cannot reach the specified tolerance in F
+---------------------------------------------------------------------------------------
+[10/30/2014 3:47:42 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 1
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269932085436e+00 +/- 2.165635071345273e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.689975273177693e-01
+R^2 = 0.955650820454283
+Adjusted R^2 = 0.953042045186888
+RMSE (Root Mean Squared Error) = 0.684833941417749
+RSS (Residual Sum of Squares) = 8.44195549171985
+---------------------------------------------------------------------------------------
+Iterations = 1
+Status = success
+---------------------------------------------------------------------------------------
+[10/30/2014 3:48:15 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: Statistical
+Scaled Levenberg-Marquardt algorithm with tolerance = 1
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269932085001e+00 +/- nan
+--------------------------------------------------------------------------------------
+Chi^2/doF = inf
+R^2 = nan
+Adjusted R^2 = nan
+RMSE (Root Mean Squared Error) = inf
+RSS (Residual Sum of Squares) = inf
+---------------------------------------------------------------------------------------
+Iterations = 1
+Status = singularity or extremely bad function behavior detected
+---------------------------------------------------------------------------------------
+[10/30/2014 3:48:26 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: No weighting
+Scaled Levenberg-Marquardt algorithm with tolerance = 1
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269932085001e+00 +/- 2.165635072334288e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.689975273177692e-01
+R^2 = 0.955650820454283
+Adjusted R^2 = 0.953042045186888
+RMSE (Root Mean Squared Error) = 0.684833941417749
+RSS (Residual Sum of Squares) = 8.44195549171985
+---------------------------------------------------------------------------------------
+Iterations = 1
+Status = cannot reach the specified tolerance in F
+---------------------------------------------------------------------------------------
+[10/30/2014 3:48:31 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: No weighting
+Unscaled Levenberg-Marquardt algorithm with tolerance = 1
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269932085001e+00 +/- 2.165635072334288e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.689975273177692e-01
+R^2 = 0.955650820454283
+Adjusted R^2 = 0.953042045186888
+RMSE (Root Mean Squared Error) = 0.684833941417749
+RSS (Residual Sum of Squares) = 8.44195549171985
+---------------------------------------------------------------------------------------
+Iterations = 1
+Status = cannot reach the specified tolerance in F
+---------------------------------------------------------------------------------------
+[10/30/2014 3:48:38 PM	Plot: ''Graph1'']
+Non-linear Fit of dataset: Table1_2, using function: a*sqrt((cos(x*(2*asin(1))/180))^2)
+Weighting Method: No weighting
+Nelder-Mead Simplex algorithm with tolerance = 1
+From x = 0.000000000000000e+00 to x = 1.800000000000000e+02
+a = 8.827269932085001e+00 +/- 2.165635072334288e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 4.689975273177692e-01
+R^2 = 0.955650820454283
+Adjusted R^2 = 0.953042045186888
+RMSE (Root Mean Squared Error) = 0.684833941417749
+RSS (Residual Sum of Squares) = 8.44195549171985
+---------------------------------------------------------------------------------------
+Iterations = 3
+Status = success
+---------------------------------------------------------------------------------------
+</log>

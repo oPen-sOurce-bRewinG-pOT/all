@@ -1,0 +1,10 @@
+#Laziness	Proportionality	ErrorBar	ExponentDeviation	ErrorBar
+#===============================================================================
+0		10.5292			0.6252		-0.0185438		0.006896
+0.2		9.09441			0.4555		-0.0174813		0.005816
+0.4		8.50087			0.4284		-0.0273725		0.005861
+0.6		7.23504			0.3622		-0.0303112 		0.005825
+0.8		5.14372			0.1139		-0.0308632		0.002576
+#
+#
+# These results are obtained by fitting to the formula a*(t^(0.5-b)), a is the proportionality and b is the deviation of the exponent.

@@ -1,0 +1,305 @@
+
+
+*******************************************************************************
+Fri Jun 26 21:32:00 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 15.6087           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.533195
+
+initial set of free parameter values
+
+b               = 1
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 8.65174
+rel. change during last iteration : -8.35557e-07
+
+degrees of freedom    (FIT_NDF)                        : 15
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.759462
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.576783
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+b               = 0.202407         +/- 0.01944      (9.606%)
+
+
+correlation matrix of the fit parameters:
+
+               b      
+b               1.000 
+
+
+*******************************************************************************
+Fri Jun 26 21:32:20 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.20965           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.76537
+
+initial set of free parameter values
+
+b               = 0.202407
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 7.19811
+rel. change during last iteration : -9.09858e-06
+
+degrees of freedom    (FIT_NDF)                        : 15
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.692729
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.479874
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+b               = 0.204387         +/- 0.01798      (8.797%)
+
+
+correlation matrix of the fit parameters:
+
+               b      
+b               1.000 
+
+
+*******************************************************************************
+Fri Jun 26 21:33:06 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Jun 26 21:33:08 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 22.407            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 6.84717
+
+initial set of free parameter values
+
+b               = 0.204387
+a               = 1
+
+After 14 iterations the fit converged.
+final sum of squares of residuals : 7.18812
+rel. change during last iteration : -9.57693e-06
+
+degrees of freedom    (FIT_NDF)                        : 14
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.716545
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.513437
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+b               = 0.204727         +/- 0.01966      (9.603%)
+a               = 0.0271027        +/- 0.189        (697.4%)
+
+
+correlation matrix of the fit parameters:
+
+               b      a      
+b               1.000 
+a               0.319  1.000 
+
+
+*******************************************************************************
+Fri Jun 26 21:34:16 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 19.6839           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.32774
+
+initial set of free parameter values
+
+b               = 0.204727
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 14.553
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 15
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.984987
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.970199
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Fri Jun 26 21:34:38 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14.553            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+b               = 17.9701
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Fri Jun 26 21:35:04 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 0.238222          delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+b               = 17.988
+a               = 0.0271027
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 0.226858
+rel. change during last iteration : -4.48967e-12
+
+degrees of freedom    (FIT_NDF)                        : 14
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.127296
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0162042
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Fri Jun 26 21:36:00 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 0.226859          delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+b               = 17.988
+a               = 0.0538069
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.226858
+rel. change during last iteration : -2.03598e-07
+
+degrees of freedom    (FIT_NDF)                        : 14
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.127296
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0162042
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Fri Jun 26 21:36:36 2015
+
+
+FIT:    data read from "rpbcalc.dat"
+        format = z
+        #datapoints = 16
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14.553            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+b               = 17.988
+BREAK:          Singular matrix in Givens()
+

@@ -1,0 +1,3 @@
+#/bin/bash
+#python histogram_binning.py 1000_0.2.dat 1000_0.2out.dat
+python normalizer_2coldat.py 1000_0.2out.dat 1000_0.2out_n.dat

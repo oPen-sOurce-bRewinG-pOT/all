@@ -1,0 +1,279 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% README for extreme-deconvolution implementation:
+%    contains: installation instuctions, usage instructions
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Copyright 2008-2010 Jo Bovy, David W. Hogg, and Sam Roweis.
+
+
+INSTALLATION:
+--------------
+
+(for an alternative way to install the python library, see the
+INSTALL_PYTHON file)
+
+
+The installation can produce two things: (1) a shared library which
+can be called from other programs and which is called in the IDL
+wrapper provided with the distribution, (2) a "main" program which
+runs on input files. See usage below for instructions on how to use these.
+
+The shared library will be installed in the current directory, and the
+installation command will also attempt ensure that the path to the
+shared library in the IDL wrapper is correct. Please do check this
+path in the IDL wrapper if problems occur with the wrapper. If make
+install is not called the location of the '.so' should be set manually
+in the IDL wrapper (which is located in the /pro directory).
+
+This program needs the Gnu Scientific Library
+(http://www.gnu.org/software/gsl/). The installation will not succeed
+if this library is not found.
+
+Installation:
+make
+sudo make install
+make idlwrapper
+make pywrapper
+make testidl
+make testpy
+make clean
+
+1) make: make will create both the shared objected library as well as
+the "main" program. Run "make extremedeconvolution" to just compile
+the main program, "make extremedeconvolution.so" to just compile the
+shared object library. These files will be deposited in the 'build/'
+sub-directory.
+
+2) sudo make install: will copy the shared object library to
+/usr/local/lib . To install somewhere else run
+
+sudo make install INSTALL_DIR=/path/to/install/dir/
+
+make sure to end in '/'.
+
+3) make idlwrapper: will set the path of the shared object library in the
+IDL wrapper. If you installed the library by specifying INSTALL_DIR, also run
+
+make idlwrapper INSTALL_DIR=/path/to/install/dir/
+
+4) make pywrapper: will set the path of the shared object library in
+the Python wrapper (that this works is not critical if the library is
+installed in a standard place). If you installed the library by
+specifying INSTALL_DIR, also run
+
+make pywrapper INSTALL_DIR=/path/to/install/dir/
+
+5) make testidl: this will run the test program 'fit_tf.pro' from the
+examples directory, fitting the Tully-Fisher relation in different
+bandpasses (see arXiv:0905:2979v1 for details). A plot TF.ps and
+output file TF.tex will be produced in the examples directory. If the
+test succeeds 'Ouput of test agrees with given solution' will be
+printed. If the test (diff of TF.tex and TF.out) fails 'Output of test
+does not agree with given solution Manually diff the TF.tex and TF.out
+(given solution) file' will be printed. IMPORTANT: If your IDL
+installation is not 'idl', pass the variable IDL=/your/idl/bin
+
+6) make testpy: Tests whether the python program can access the
+library and gives the expected output for a test run. Uses python's
+doctest module. IMPORTANT: If your Python installation is not
+'python', pass the variable PYTHON=/your/python/bin
+
+7) make clean: cleans up intermediate files
+
+8*) make spotless: deletes all the intermediate files as well as the main
+program and the shared library.
+
+
+
+USAGE I: THROUGH THE PYTHON OR IDL WRAPPERS
+--------------------------------------------
+
+Usage through the python or IDL wrappers is encouraged. Indeed, the
+"main" program is lacking in many respects, was never used in any
+scientific analysis, and has not been tested. However, it might
+work. More on this later.
+
+See the python and IDL wrapper header for information on how to call
+the IDL routine. Various logfiles can be written, one of them logs
+everything (ie, loglikelihoods after each iteration + input and output
+parameters). The other one only outputs the loglikelihood trajectory
+of the accepted split and merge moves.
+
+The code given here is more general than the algorithm given in the
+paper in the documentation in that it includes the possibility of
+providing a projection matrix which projects the *underlying* values
+on the data, i.e., as in Eq. (3) of the paper. However, if this
+projection matrix does not have full rank (eg, when the data is
+incomplete), then the calculation of the split and merge hierarchy
+implemented here is not correct. Therefore, if you want to employ the
+split and merge algorithm with incomplete data we suggest that you use
+full rank projection matrices and put in very large errors for the
+unobserved dimensions. This works. Some hints are given in the code on
+what the correct implementation would be for projections matrices that
+don't have full rank.
+
+The code here is also more general than the algorithm in that one can
+specify a weight for each data point with which its contribution to
+the log-likelihood should be weighted. Use this option with care!
+
+USAGE II: THROUGH THE SHARED OBJECT LIBRARY
+-------------------------------------------
+
+The C-code implementing the algorithm can be called from other
+C-programs by using the shared object library. The main function for
+this purpose is the 'proj_gauss_mixtures' function. This function
+takes as its input the data, the initial conditions, and some
+parameters describing the kind of solution one wants, and updates the
+initial conditions to the result of the algorithm.
+
+The inputs are as follows: 
+
+a. The data: an array of structures of type
+'datapoint'. Each 'datapoint' structure holds all of the information
+pertaining to one datapoint: 
+struct datapoint{
+  gsl_vector *ww;
+  gsl_matrix *SS;
+  gsl_matrix *RR; }; The vector ww holds the actual measured data; the
+matrix SS holds the uncertainty covariance matrix associated with this
+data point, and the projection matrix RR projects from the space where
+the model lives to the space of the data (this could be a rotation, or
+just simply a unit matrix if the model and the observations are given
+in the same coordinates). Once can set RR to a null pointer if no
+projection is necessary, in which case you also need to provide the
+bool noproj (see later). The data->SS matrix can be (di,1) dimensional
+instead of (di,di) dimensional, when the uncertainty covariances are
+diagonal. In this case, also set the diagerrs bool (see below). The
+integer 'N' specifies the number of datapoints.
+
+b. The model parameters, i.e., the initial conditions: The initial
+conditions for the model parameters are given as an array of
+structures of type 'gaussian', each member of this array holds the
+parameters for one of the Gaussian components:
+struct gaussian{
+  double alpha;
+  gsl_vector *mm;
+  gsl_matrix *VV; }; here, alpha holds the amplitude of this component
+in the mixture, the vector mm holds the mean of this Gaussian
+component, and the matrix VV holds its covariance matrix.
+The integer 'K' specifies the number of Gaussian components in the mixture.
+
+c. fixamp, fixmean, fixcovar: arrays of bools specifying for each
+Gaussian component whether its amplitude, mean, or covariance,
+respectively, should be held fixed during the optmization.
+
+d. avgloglikedata: this double holds the average log likelihood of the
+data, returned after convergence.
+
+e. tol and maxiter: if the difference between two subsequent average
+log likelhihoods is smaller than tol the algorithm is considered to
+have converged. maxiter specifies the maximum number of iterations
+(for the initial convergence and each individual split and merge step)
+that the algorithm will go through before giving up.
+
+f. likeonly: set this to true if you only want to calculate the
+average log likelihood of the data given the model, without
+optimization.
+
+g. w, splitnmerge: w specifies the w parameter to be used in the
+regularization (see the accompanying paper for more on this);
+splitnmerge specifies the number of steps to go down in the
+split-and-merge hierarchy before given up (again, see the paper for
+more on this).
+
+h. keeplog, logfile, convlogfile: set keeplog to true to print
+information to a logfile: this includes the initial conditions used,
+the average log likelihood in every step, and, for the split-and-merge
+part, which Gaussians are split and which are merged and whether the
+split-and-merge step was successfull or not. convlogfile holds only
+the average loglikelihoods of the initial convergence (before the
+first split-and-merge step) and those of successfull split-and-merge
+steps.
+
+i. noproj: indicates that no projection from the model space to the
+data space is necessary.
+
+j. diagerrs: indicates that the uncertainty covariances in data->SS
+are diagonal, such that data->SS is a (di,1) matrix instead of a
+(di,di) matrix.
+
+
+USAGE III: THROUGH THE MAIN PROGRAM
+-----------------------------------
+
+AS OF v1.2, THE MAIN PROGRAM IS NO LONGER SUPPORTED
+
+(deprecated) The "main" program: since no effort was made to develop
+this, this "main" program is very rudimemtary. The input data and
+initial conditions must be supplied in the files "inputdata.dat" and
+"IC.dat" respectively, and the results are written to the file
+"result.dat". The main advantage of the "main" program is that it can
+deal with data that has unobserved dimensions that are different for
+different data points, i.e., it can handle the situation in which the
+first data point has one unobserved dimension and the second data
+point has two unobserved dimension, etc. This is all rather irrelevant
+given that unobserved dimension == large errors, but it could be
+useful. The main disadvantage of the main program is that it has not
+been tested extensively, but if it succeeds in getting the data and
+the initial conditions to the main algorithm, the results should be
+trusted (since the main algorith has been tested extensively).
+
+The structure of the initial conditions file is as follows (see
+examples/IC.dat for an example): First various parameters of the model
+and the algorithm must be set, e.g., the number of Gaussians, the
+maximum number of iterations, etc. Then the initial values for the
+parameters of the various Gaussians must be set, first the amplitude,
+then the components of the mean, and the covariance matrix (in the
+format xx, yy, zz, xy, xz, yz, and similar for higher/lower
+dimensions); see the file examples/IC.dat for a specific example of
+this.
+
+The structure of the data file is as follows (see
+examples/inputdata.dat for an example of this): Each line holds the
+data from one datapoint; separated by '|' first we specify the value
+of the data point w, then the covariance matrix S associated with this
+measurement (specified as xx, yy, xy, and similar for higher
+dimensions), followed by the projection matrix (in the format 11, 12,
+21, 22, and similar for higher dimensions).
+
+
+
+OUTSTANDING ISSUES
+------------------
+
+For small data sets the algorithm will very rarely decrease the
+likelihood in a step (which it is proven not to). This is most likely
+due to a small numerical instability in the way the average log
+likelihoods are calculated. These rare decreases are very small, and
+do not seem to affect the good overall behavior of the algorithm.
+
+
+LICENSE
+-------
+	
+This code is free software licensed under the GNU GPL, version 2.  See
+the file LICENSE for the full terms of the GNU GPL.
+
+
+ACKNOWLEDGING EXTREME-DECONVOLUTION
+-----------------------------------
+
+The algorithm that the code implements is described in the paper
+"Extreme deconvolution: inferring complete distribution functions from
+noisy, heterogeneous and incomplete observations"; a copy of the
+latest draft of this paper is included in the "doc/" directory of the
+repository or source archive. If you use the code, please cite this
+paper, e.g., 
+
+Extreme deconvolution: inferring complete distribution functions from
+noisy, heterogeneous and incomplete observations Jo Bovy, David
+W. Hogg, & Sam T. Roweis, Submitted to AOAS (2009) [arXiv/0905.2979]
+
+CONTACT
+-------
+
+Questions, comments, extensions? jb2777@nyu.edu
+
+
+END_OF_README

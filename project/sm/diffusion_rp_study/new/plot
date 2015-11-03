@@ -1,0 +1,45 @@
+set xr [0:500]
+set yr [0:1400]
+set samples 10000
+plot "L0.0_sc.dat" w p ps 1.5 title "Laziness=0.0"
+replot "L0.2_sc.dat" w p ps 1.5 title "Laziness=0.2"
+replot "L0.4_sc.dat" w p ps 1.5 title "Laziness=0.4"
+replot "L0.6_sc.dat" w p ps 1.5 title "Laziness=0.6"
+replot "L0.8_sc.dat" w p ps 1.5 title "Laziness=0.8"
+replot "L0.9_sc.dat" w p ps 1.5 title "Laziness=0.9"
+#f0(x)=a0*x
+#fit f0(x) "L0.0_sc.dat" via a0
+#replot f0(x) notitle
+#
+#f2(x)=a2*x
+#fit f2(x) "L0.2_sc.dat" via a2
+#replot f2(x) notitle
+#
+#f4(x)=a4*x
+#fit f4(x) "L0.4_sc.dat" via a4
+#replot f4(x) notitle
+#
+#f6(x)=a6*x
+#fit f6(x) "L0.6_sc.dat" via a6
+#replot f6(x) notitle
+#
+#f8(x)=a8*x
+#fit f8(x) "L0.8_sc.dat" via a8
+#replot f8(x) notitle
+#
+#f9(x)=a9*x
+#fit f9(x) "L0.9_sc.dat" via a9
+#replot f9(x) notitle
+#
+f(x)=a*x
+fit f(x) "all.dat" via a
+replot f(x) notitle
+set xl "<t_frp>*Activity Parameter"
+set yl "<d_max^2>"
+set title "Average maximum distance vs. First return time*Activity Parameter Plot"
+replot
+set term postscript color
+set output "tfrp_scaled.eps"
+replot
+unset output
+pause -1

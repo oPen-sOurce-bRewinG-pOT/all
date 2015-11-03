@@ -1,0 +1,57 @@
+Installation guide for XD and other codes (galpy, bovy_mcmc,flexgp, qso-var) of Jo Bovy:
+
+1. Install EPD python. This is important. The existing Python in both Linux and Mac had some troubles. EPD installation files are saved in quasar (~/Desktop/Software_installed/Python_installers).
+
+2. Install homebrew. This is similar to Macports, i.e., a software which makes downloading and installing other software easy.
+Homebrew can be found here: http://mxcl.github.io/homebrew/
+The provide this command for installation:
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+But that does not work in tcsh. For non-bash shells use:
+curl -sL https://raw.github.com/mxcl/homebrew/go | ruby
+
+or type bash in terminal and then copy and paste the original command.
+
+3. Use homebrew to install GNU Scientific Library (gsl):
+brew install gsl --universal
+
+This installs gsl at the right place where Bovy's codes will look for it. Unlike macport which nstalls gsl in /opt/local/include which Bovy's codes cannot find.
+
+4. Mac already had git. I downloaded Bovy's codes by
+git clone https://github.com/jobovy/galpy.git
+git clone https://github.com/jobovy/bovy_mcmc.git
+git clone https://github.com/jobovy/flexgp.git
+git clone https://github.com/jobovy/qso-var.git
+
+5. In all three directories other than qso-var, do
+python setup.py install
+
+This will work only if you have EPD python and gsl installed by homebrew. Otherwise one or the other step will give errors.
+
+6. Now to install XD (the version with non-gaussian errors) use:
+svn checkout http://extreme-deconvolution.googlecode.com/svn/branches/ngerrors extreme-deconvolution-read-only
+
+There are other vesrions (mentioned in his google code website for XD) but those do not include non-gaussian errors.
+
+7. When XD is downloaded, use the instructions in the INSTALL file to install XD.
+commands are:
+make
+sudo make install
+make pywrapper
+make testpy
+make clean
+
+There are other options mentioned in the INSTALL file. You may use them if you need.
+
+The above may also give errors if it's not EPD python.
+
+8. These should do it. You may go ahead and test codes like 
+import varqso 
+v=varqso.VarQso('filename.fits') 
+v.plot() 
+
+or
+
+xdplot or xdAGamma commands as mentioned in ~/git_rit/file_index_writeup.
+
+

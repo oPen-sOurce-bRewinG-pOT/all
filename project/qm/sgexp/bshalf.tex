@@ -1,0 +1,485 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,color,tikz,graphicx,fixltx2e,float,enumerate,wrapfig,multirow,xfrac,lettrine}
+
+\setlength{\baselineskip}{6.0pt}    % 16 pt usual spacing between lines
+
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\parindent}{20pt}
+\setlength{\oddsidemargin}{0.5cm}
+\setlength{\evensidemargin}{0.5cm}
+\setlength{\marginparsep}{0.75cm}
+\setlength{\marginparwidth}{2.5cm}
+\setlength{\marginparpush}{1.0cm}
+\setlength{\textwidth}{160mm}
+\newcommand\half{\frac{1}{2}}
+\newcommand\thalf{\frac{3}{2}}
+\newcommand\lr{\left \langle}
+\newcommand\rr{\right \rangle}
+\newcommand\ls{\left |}
+\newcommand\rs{\right |}
+\newcommand\hs{\hat{S}}
+\newcommand\tbf[1]{\textbf{#1}}
+%\newcommand{\hs_}[1]{\hat{S}_{#1}}
+\newcommand\ua{\uparrow}
+\newcommand\da{\downarrow}
+\newcommand\hhalf{\frac{\hbar}{2}}
+\newcommand\rhalf{\frac{1}{\sqrt{2}}}
+\newcommand\ta{\tbf{\andy: }}
+\newcommand\tp{\tbf{\carol: }}
+\newcommand\qbt[1]{QuBit}
+\newcommand\tans{\tbf{Ans. }}
+\newcommand\usp{\ls \ua \rr}
+\newcommand\dsp{\ls \da \rr}
+\newcommand\none{None of the above.}
+\newcommand\sg{Stern-Gerlach }
+\newcommand\del{\partial}
+\newcommand\Del{\nabla}
+\newcommand\ddel[1]{\frac{\del}{\del {#1}}}
+\newcommand\h[1]{\hat{#1}}
+\newcommand\vs[1]{\vspace{#1}}
+\newcommand\dprod[2]{\vec{#1}\cdot\vec{#2}}
+\newcommand\andy{Andy }
+\newcommand\carol{Caroline }
+\newcommand\stt[1]{\lr {#1} \rs}
+
+\title{\sg Experiment}
+\author{Dr. Suchetana Chatterjee}
+
+\begin{document}
+\maketitle
+
+The \sg experiment is of great historical and philosophical importance (and interest) in physics. It is historically interesting, because it is this experiment that led to the discovery of spin, and it has since played a very important role in projecting a simple visualization of quantum mechanics. In this tutorial, we shall briefly explore these aspects of the ``\sg experiment''.
+
+\begin{enumerate}[\bf 1.]
+
+%need to prepare a tutorial for the basic S_z stuff as well.
+
+%need to write a small explanatory description of the Stern Gerlach experiment.
+
+\item An electron is
+\begin{enumerate}[\bf I.]
+\item an electric dipole.
+\item an electric monopole.
+\item a magnetic dipole.
+\item a magnetic quadrupole.
+\end{enumerate}
+\vspace{0.5cm}
+\tans The answers are \tbf{II} and \tbf{III}. The electron has unit quantum charge, that makes it an electric monopole. But due to the presence of electron spin, it acts as a magnetic dipole with dipole moment $\vec{\mu} = \gamma \vec{s}$, where $\gamma$ is called the `gyromagnetic ratio' of the electron, and $\vec{s}$ is the spin angular momentum.
+\vspace{1.5cm}
+\item What is the energy associated with a magnetic dipole in an external magnetic field?
+\begin{enumerate}[\bf I.]
+\item $H = - \vec{\mu} \cdot \vec{B}$.
+\item $H = - \vec{\mu} \times \vec{B}$.
+\item $H = \vec{\Del}\left(\vec{\mu}\cdot\vec{B}\right)\times\vec{\mu}$.
+\item $H = \vec{\Del}\left(\vec{\mu}\times\vec{B}\right) $.
+\end{enumerate}
+\vspace{0.5cm}
+\tans The energy associated with a magnetic dipole moment $\vec{\mu}$ in an external magnetic field $\vec{B}$ is given by $H = - \vec{\mu} \cdot \vec{B}$.
+\vspace{1cm}
+\item What is the force on a magnetic dipole due to an external magnetic field?
+\begin{enumerate}[\bf I.]
+\item $\vec{\mu}\times\vec{B}$.
+\item $\ls \vec{\mu} \rs \vec{B}$.
+\item $\vec{\Del}\times\left(\vec{\mu}\times\vec{B}\right)$.
+\item $\vec{\Del}\left(\vec{\mu}\cdot\vec{B}\right)$.
+\end{enumerate}
+\vspace{0.5cm}
+\tans The force originates due to a gradient in the potential energy. Since the energy of a magnetic dipole of magnetic moment $\vec{\mu}$ in an external magnetic field $\vec{B}$ is given by $H = - \vec{\mu} \cdot \vec{B}$, the force is given by $\vec{F} = -\vec{\Del}H = -\vec{\Del}\left(-\vec{\mu}\cdot\vec{B}\right) = \vec{\Del}\left(\vec{\mu}\cdot\vec{B}\right)$.
+\vspace{1cm}
+\item Which of the following are non-uniform magnetic fields?
+\begin{enumerate}[\bf I.]
+\item $\vec{B} = B_0 \hat{i} + B_0^{'}\hat{j}$.
+\item $\vec{B} = B_0 \left( \hat{i} + \hat{j} + \hat{k} \right )$.
+\item $\vec{B} = B_0 \sin{\frac{x}{a}} \hat{k}$.
+\item $\vec{B} = -\alpha x \hat{i} + \left(B_0 + \alpha z \right) \hat{k}$.
+\end{enumerate}
+\vspace{0.5cm}
+\tans Magnetic fields in options \tbf{III} and \tbf{IV} have spatial dependence, whereas the magnetic fields in options \tbf{I} and \tbf{II} are constant throughout space.
+\vspace{1cm}
+\item Calculate the force on a magnetic dipole $\vec{\mu} = \gamma \vec{s}$ under the influence of the magnetic field $ \vec{B} = \alpha z \hat{k}$.
+\begin{enumerate}[\bf I.]
+\item $0$.
+\item $\gamma \hs_z \alpha z \hat{i}$.
+\item $\gamma \hs_z \alpha z \hat{k}$.
+\item $\alpha \gamma \left(\hs_x + \hs_y + \hs_z\right)$.
+\end{enumerate}
+\vspace{0.5cm}
+\tans The choice is \tbf{III}. Force is given as $\vec{\Del}\left(\vec{\mu}\cdot\vec{B}\right)$. Now, $\vec{\mu} = \gamma \vec{s}$.
+The assiociated magnetic energy is then,
+$$
+\begin{aligned}
+-\vec{\mu} \cdot \vec{B} &= -\gamma \left(\hs_x \hat{\imath} + \hs_y \hat{\jmath} + \hs_z \hat{k} \right) \cdot (\alpha z \hat{k}) \\
+&= -\gamma \left[0 + 0 + \hs_z \alpha z \right] \\
+&= -\gamma \hs_z \alpha z.
+\end{aligned}
+$$
+Thus, the force is,
+$$
+   \begin{aligned}
+    -\vec{\Del}H &= \vec{\Del}\left(\vec{\mu}\cdot\vec{B}\right) \\
+    &= \alpha \gamma \vec{\Del} \left(\hs_z z\right) \\
+    &= \alpha \gamma \left[ \ddel{x}\hat{\imath}+\ddel{y}\hat{\jmath}+\ddel{z}\hat{k} \right] \left(\hs_z z \right) \\
+    &= \alpha \gamma \left[ 0 + 0 + \hs_z \hat{k} \right] = \alpha \gamma \hs_z \hat{k}.
+   \end{aligned}
+$$\vspace{1cm}
+\newpage
+In a \sg experiment, a non-uniform magnetic field is used. The setup is as follows:
+%\newpage
+%\phantom{doing good} %marking a line after which 5cm is skipped
+\vskip 7cm %photo goes here
+In \sg experiment, if we send a beam of charged particles through the apparatus, then the Lorentz force arising from the interaction of the charged particles with the non-uniform magnetic field will be quite complicated, and we do not want to add additional complications to the experiment. So, typically neutral atoms with single unpaired electrons (for example, silver atoms) are used as the constituents of the beam.
+\vspace{1cm}
+\item For Ag atoms, total angular momentum $L = 0$ because the outermost shell is a `{\it s}' shell. It has $ s = \half $, because there is only one electron in the outermost shell. Can you calculate the force on such an atom due to an external magnetic field $\vec{B} = \alpha z \hat{k}$? \newline
+[Hint: Think about the previous question, and $\gamma$ is the gyromagnetic ratio of the electron.]
+\begin{enumerate}[\bf I.]
+	\item $\pm\half\alpha\gamma\hat{k}$.
+	\item $\alpha\gamma\hat{k}$.
+	\item $\frac{\alpha+\gamma}{2}\h{k}$.
+	\item $\alpha\gamma z \h{k}$.
+	
+\end{enumerate}
+\vspace{0.5cm}
+\tans In the previous question, we calculated the force for any $\vec{s}$ as $\vec{F} = \alpha \gamma s_z \h{k}$. Here, $s=\half$, which implies~ $s_z = \pm\half$. So, the force is ~$\pm\half\alpha\gamma\hat{k}$. 
+
+\vspace{1cm}
+\item Calculate the magnetic energy for electron in the last shell of the Ag atom in an external magnetic field $\vec{B} = \alpha z \h{k}$. \newline
+[Hint: ~Consider the energy of the only unpaired electron in the outermost shell, whose spin generates a magnetic dipole moment that contributes to the magnetic interaction energy of the Ag atom.]
+\begin{enumerate}[\bf I.]
+	\item $\mp {\gamma\alpha \hbar z}/{2}$.
+	\item $\mp \alpha\gamma\hbar z$.
+	\item $\mp {\alpha \gamma \hbar}/{2}$.
+	\item \none
+\end{enumerate}
+\vspace{0.5cm}
+\tans The answer is \tbf{I}. The magnetic energy is given by $-\dprod{\mu}{B}$~, where $\vec{\mu}$ is the magnetic moment of the electron given by:
+$$
+\vec{\mu} = \gamma \left[s_x\h{i}+s_y\h{j}+s_z\h{k}\right].
+$$
+Hence, $- \dprod{\mu}{B} = -\gamma \alpha s_z z$. Since $s_z = \pm \hhalf$, $H = \sfrac{\mp \gamma\alpha \hbar z}{2}$, which is the energy of the electron.
+\vskip 1cm
+\tbf{Here will be a picture!!!}
+\newpage
+\item \label{prb:t_var_h} Consider a \sg set-up where neutral Ag atoms are sent across a non-uniform magnetic field $\vec{B} = \alpha z \h{k}$. The magnetic field is turned off at ~$t=T$. Then which of the following is the correct expression for the Hamiltonian of the Ag atom due to the incteraction with the magnetic field?
+\begin{enumerate}[\bf I.]
+{
+	\item $H(t) = \mp \gamma\alpha\hbar z /2$ all along its path.
+	\item $H(t) = \mp \gamma \alpha \hbar z / 2$ when $ 0 \le t \le T $ and 0 otherwise.
+	\item $H(t) = 0$ throughout.
+	\item \none
+}\end{enumerate}
+\vspace{0.5cm}
+\tans The answer is \tbf{II}. In the previous problem, we have worked out the case of the hamiltonian of magnetic interaction due to external magnetic field, which turns out to be $H(t) = \mp \gamma \alpha \hbar z / 2$. But in this setup, the magnetic field turns off after a time $T$. So, after this time has elapsed, the Ag atoms behave like free particles with no magnetic interaction due to the absence of the magnetic field. Hence $H(t) = 0$ for $t > T$.
+\vspace{1cm}
+\item If ~$\chi_+ = { 1 \choose 0 }$ and ~$\chi_- = { 0 \choose 1 }$ are the up and down spin states in the $z$ direction, then in this basis, how would you express a general spin state?
+\begin{enumerate}[\bf I.]
+{
+	\item $\chi ( t ) = a { 1 \choose 0 } + b { 0 \choose 1 }$~, where such that ~$a^2 + b^2 = 1$.
+	\item $\chi ( t ) = a { 1 \choose 0 } + b { 0 \choose 1 }$~, where $a$ and $b$ are arbitrary numbers.
+	\item $\chi ( t ) = a { 1 \choose 0 } + b { 0 \choose 1 }$~, where such that ~$a + b = 1$.
+	\item $\chi ( t ) = a { 1 \choose 0 } \times b { 0 \choose 1 }$~, where such that ~$a^2 + b^2 = 1$.
+}\end{enumerate}
+\vspace{0.5cm}
+\tans Any general state $\chi(t)$ can be represented as a linear superposition of the basis vectors. But in quantum mechanics, all states are normalized. So, $\ls \chi(t) \rs ^ 2$ must come out as 1. Since $\chi ( t )$ is a linear superposition of $\chi_+$ and $\chi_-$, we can write it as $\chi(t)=a \chi_+ + b \chi_-$. To normalize this to 1, we must have $a^2+b^2=1$. Hence, choice \tbf{I} is correct.
+\vspace{1cm}
+\item \label{prb:t_ev} A neutral particle sets out in the state $\chi(t=0) = a { 1 \choose 0 } + b { 0 \choose 1 }$, under the influence of a magnetic field $\vec{B} = \alpha z \h{k}$. What will be the state of the particle after time $t$?
+\begin{enumerate}[\bf I.]{
+	\item $\chi(t) = \left(a \chi_+ + b \chi_- \right) e ^ {i{{\gamma \alpha z t}\over{2}}}$.
+	\item $\chi(t) = \left( { a + b \over 2 } \right) \left( \chi_+ + \chi_- \right)e ^ {i{{\gamma \alpha z t}\over{2}}}$.
+	\item $\chi(t) = a \chi_+ e ^ {+i{{\gamma \alpha z t}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z t}\over{2}}}$.
+	\item $\chi(t) = a \chi_+ e ^ {+i{{\gamma \alpha z t}\over{2}}} \times b \chi_- e ^ {-i{{\gamma \alpha z t}\over{2}}} = a b \chi_+ \chi_-$.
+}\end{enumerate}
+\vspace{0.5cm}
+\tans A quantum state evolves over time according to the {\it time evolution operator}, which is $e ^ {-i {\h{H} \over \hbar}t}$. Now, we have already determined the hamiltonian for such particles in previous problems:
+$$ \h{H} = - \gamma \alpha \hs_z z .$$
+Hence,
+$$
+\begin{aligned}
+\chi(t) &= \mathcal{O}(t) \chi ( 0 ),\\
+		&= e ^ {-i {\h{H} \over \hbar}t} \chi(0),\\
+		&= e ^ {i {\gamma \alpha \over \hbar} \hs_z z t} \chi(0), \\
+		&= e ^ {i {\gamma \alpha \over \hbar} \hs_z z t} \left( a \chi_+ + b \chi_- \right), \\
+		&= a \left(e ^ {i {\gamma \alpha \over \hbar} z t \hs_z} \chi_+ \right) + b \left(e ^ {i {\gamma \alpha \over \hbar} z t \hs_z} \chi_- \right),\\
+		&= a \left(e ^ {i {\gamma \alpha \over \hbar} z t \left(+\hhalf\right)} \chi_+ \right) + b \left(e ^ {i {\gamma \alpha \over \hbar} z t \left(-\hhalf\right)} \chi_- \right), \\
+		&= a \left(e ^ {+i \half {\gamma \alpha} z t} \chi_+ \right) + b \left(e ^ {-i \half {\gamma \alpha} z t} \chi_- \right), \\
+		&= a \chi_+ e ^ {+i{{\gamma \alpha z t}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z t}\over{2}}},
+\end{aligned}
+$$
+which is choice {\bf III}.
+\vspace{1cm}
+\item In problem~\ref{prb:t_var_h}, we considered the case of a time-varying Hamiltonian, where the particle escapes the magnetic field at $t=T$. What will be $\chi(t)$ when the particle escapes?
+\begin{enumerate}[\bf I.]{
+	\item $\chi(T) = a \chi_+ e ^ {+i{{\gamma \alpha z T}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z T}\over{2}}}$.
+	\item $\chi(T) = 0$.
+	\item $\chi(T) = a \chi_+ + b \chi_-$.
+	\item \none
+}\end{enumerate}
+\vspace{0.5cm}
+\tans The choice is {\bf I}, because from the problem where we discussed the time evolution of a general spin state under the influence of a magnetic field (problem~\ref{prb:t_ev}), we can see that,
+$$
+	\chi(t) = a \chi_+ e ^ {+i{{\gamma \alpha z t}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z t}\over{2}}}.
+$$ 
+Now, putting $t=T$ in this expression, we obtain $$\chi(T) = a \chi_+ e ^ {+i{{\gamma \alpha z T}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z T}\over{2}}},$$ which is {\bf I}. \newline %\hline
+\hrule
+\vspace{1cm}
+{\it{\bf C}}onsider the following conversation between \andy and \carol: \vspace{0.5cm} \newline
+{\bf \andy:} The two terms in $\chi(t)$ will be separated spatially because now they carry momentum in $\h{z}$ direction; the spin up component having momentum $p_+=+\frac{\gamma\alpha T}{2}\hbar$ and the spin down component carrying momentum $p_-=-\frac{\gamma\alpha T}{2}\hbar$.\newline
+{\bf \carol:} No, as soon as the particle leaves the magnetic field, the magnetic interaction will stop and the particle will revert back to its initial state $\chi = a \chi_+ + b \chi_-$. \vspace{1cm} \newline
+{\bf W}ho is correct?
+\begin{enumerate}[\bf I.]
+{
+	\item \andy is correct.
+	\item \carol is correct.
+	\item Both are correct.
+	\item Both are mistaken.
+}\end{enumerate}
+\vs{0.5cm}
+\tans \andy is correct. The Hamiltonian evolves the wave function while the particle interacts with the magnetic field, whereby the particles gain momentum in the $\h{z}$ direction, which results in spatial separation of the particles, as described in the picture.
+\newpage
+\phantom{hell}
+\vskip 5cm
+To determine the momentum in $\h{z}$ direction, we can simply operate on the state with the momentum operator, which is $\frac{\hbar}{i}\ddel{z}$. \newline
+Initially, we have,
+$$\chi(t=0) = a\chi_++b\chi_-.$$
+So,
+$$
+\begin{aligned}
+	\h{p}_z \chi(0) &= \h{p}_z \left(a\chi_++ b \chi_-\right) \\
+					&= \frac{\hbar}{i}\ddel{z} \left(a\chi_++ b \chi_-\right) \\
+					&= 0,
+\end{aligned}
+$$
+since $\chi_\pm$ are not dependent on $z$. Hence, it can be seen that initially the particles were not carrying any momentum in the $\h{z}$ direction. But at time $t=T$, let us determine the momentum:
+$$
+\begin{aligned}
+	\h{p}_z \chi(T) &= \h{p}_z a \chi_+ e ^ {+i{{\gamma \alpha z T}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z T}\over{2}}} \\
+					&= \frac{\hbar}{i}\ddel{z} \left(a \chi_+ e ^ {+i{{\gamma \alpha z T}\over{2}}} + b \chi_- e ^ {-i{{\gamma \alpha z T}\over{2}}} \right) \\
+					&= \frac{\hbar}{i}\cdot{+i{{\gamma \alpha T}\over{2}}} a \chi_+ e ^ {+i{{\gamma \alpha z T}\over{2}}} \\
+					& \quad + \frac{\hbar}{i}\cdot{-i{{\gamma \alpha T}\over{2}}} b \chi_+ e ^ {-i{{\gamma \alpha z T}\over{2}}} \\
+					&= \left( + {\gamma \alpha \hbar T \over 2} \right) a \chi_+ e ^ {+i{{\gamma \alpha z T}\over{2}}} + \left( - {\gamma \alpha \hbar T \over 2} \right) b \chi_- e ^ {-i{{\gamma \alpha z T}\over{2}}}.
+\end{aligned}
+$$
+Hence, the up component has momentum $\left( + {\gamma \alpha \hbar T \over 2} \right)$, and the down component has momentum $\left( - {\gamma \alpha \hbar T \over 2} \right)$. 
+\item For $s=\half$ the beam splits in two parts. If we use particles with $s={3\over 2}$ instead, in how many parts will the beam split?
+\begin{enumerate}[\bf I.]
+{
+	\item 3.
+	\item 2.
+	\item 4.
+	\item 5.
+}\end{enumerate}
+\vs{0.5cm}
+\tans For spin $s$, there can be $2s+1$ values for $s_z$. So, for $s=\half$, we have $2\times\half + 1=2$ values. Hence, for $s={3\over 2}$, we have $2\times{3\over 2} + 1=4$ values for $s_z$. Now, each value of spin corresponds to a different energy value, and thus a different momentum. So we shall obtain {\it 4} spots for spin ${3\over 2}$ (choice {\bf III}).
+\vs{1cm}
+\item In many multi-electron atoms, it is possible to get $s=0$, where the total spin adds up to $0$. In such a case, how many spots do you expect to get, for the same system we have been using?
+\begin{enumerate}[\bf I.]
+{
+	\item 1.
+	\item 4.
+	\item 2.
+	\item 3.
+}\end{enumerate}
+\vs{0.5cm}
+\tans The answer is {\bf I}. This is apparent from the logic of the previous problem: $2\times 0 + 1 = 1$. But, there is also a simple physical interpretation of the answer. As the spin is zero, the magnetic moment due to spin is also zero. Hence there is no spin-magnetic field interaction that will separate the particles.
+\vs{1cm}
+\item For $s=1$, how many spots do you expect?
+\begin{enumerate}[\bf I.]{
+	\item 1.
+	\item 2.
+	\item 3.
+	\item 4.
+}\end{enumerate}
+\vs{0.5cm}
+\tans The answer is $2\times 1 + 1=3$. So choice {\bf III} is correct. \vs{1cm} \hrule \vs{1cm}
+You can see that we are getting odd number of spots only for integral values of $s$, and we are getting even number of spots for half-integral values of $s$. This can be explained in the following way: Since angular momentum (spin or orbital) can only change in integral steps, there will be odd number of possible values of $s_z$ for integral $s$, and even number of possible values for half integral $s$. Now, since orbital angular momentum is always integral, we can expect even number of spots in a \sg experiment due to angular momentum. Whereas in the \sg experiment with Ag atom (which first led to the discovery of spin), we obtain 2 (even) spots. This mystery was incompatible with the orbital angular momentum model. Then, Goudsmit and Uhlenbeck's conjecture of half-integral spin angular momentum properly explained this mysterical phenomena of even splitting.\newline
+But apart from this, there is another important aspect of the \sg experiment. This experiment has played a pivotal role in explaining the philosophy of quantum mechanics regarding preparation of quantum states, as well as the importance of the process of measurement. We shall address the following issues related to preparation of quantum states and measurement:
+\vs{0.5cm}
+\begin{itemize}
+{
+	\renewcommand\labelitemi{$\rightarrow$}
+	\item Preparation of a quantum system in a certain quantum state.
+	\item Difference between state preparation and measurement.
+	\item Compatible and incompatible observables.
+	\item Effect of measurement on future evolution of the system.
+}\end{itemize}
+\newpage
+\phantom{Just another nothing}
+Insert image: Notations used and descriptions.
+\newpage
+{\bf C}onsider {\it silver} atoms which have $\ls \chi \rr = \usp_z = { 1 \choose 0 }$ ie. eigenstates of $\hs_z$ with eigenvalue $\hhalf$. \vs{0.75cm}\newline
+\item \label{prb:sgapp_op} Consider the following situation: \vs{4cm} \newline
+\begin{enumerate}[\bf I.]{
+	\item The up detector never clicks.
+	\item The up detector clicks only 50\% of the time.
+	\item the up detector clicks all the time.
+	\item Can not say.
+}\end{enumerate}
+\vs{0.5cm}
+\tans {\bf III}. Since $\usp_z$ is an eigenstate of $\hs_z$ and the \sg device has also a field gradient in $\h{z}$ direction, the state is still an eigenstate of $\hs_z$ after passing through the \sg device, which evolves the state of the particle according to $e^{-i{\h{H} \over \hbar}t}$, where $\h{H}$ is simply $-\gamma \alpha \hs_z z$. Therefore, in this case, the {\it up} detector will click all the time, and the {\it down} detector will never click at all.
+\vs{1cm}
+\item Consider the following setup and determine which of the following propositions is correct: \vs{4cm} \newline
+\begin{enumerate}[\bf I.]{
+	\item The up detector never clicks.
+	\item the up detector clicks half of the time.
+	\item the up detector clicks all the time.
+	\item Can not say.
+}\end{enumerate}
+\vs{0.5cm}
+\tans Choice {\bf II} is correct. $\usp_z$ is not an eigenstate of $\hs_x$ operator, whereas the \sg apparatus used in this case evolves the state with a function of the $\hs_x$ operator (see problem \ref{prb:sgapp_op}). But, $\usp_z$ can be written as a linear superposition of the eigenstates of $\hs_x$ in the following way:
+$$
+	\usp_z = { 1 \over \sqrt{2} } \left( \usp_x + \dsp_x \right).
+$$
+Therefore, the probability that the {\it up} detector clicks is just $\left({1\over\sqrt{2}}\right)^2 = \half$. Hence, the {\it up} detector will click half of the time.
+\vs{1cm}
+\item Consider the following setup and determine which of the following propositions is correct: \vskip 4cm
+\begin{enumerate}[\bf I.]{
+	 \item The up detector never clicks.
+	\item the up detector clicks half of the time.
+	\item the up detector clicks all the time.
+	\item Can not say.
+}\end{enumerate}
+\vs{0.5cm}
+\tans Again choice {\bf II} is correct, as $\usp_z$ not being an eigenstate of the $\hs_y$ operator, it can be written as $\usp_z = { 1 \over \sqrt{2} } \left( \usp_y + \dsp_y \right)$. Then, there is 50\% chance that the {\it up} detector will click.
+\vs{0.5cm} \newline
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+       	Since the probabilities of getting {\it up} or {\it down} states are equal in the two cases considered above, it is impossible to know a-priori which of the detectors will click, i.e.~to which state the initial state will {\it collapse} after going through the \sg apparatus.
+    }%
+}
+\vs{1cm}\item Consider the following case and determine which of the following is correct:
+\vs{4cm}\newline
+\begin{enumerate}[\bf I.]{
+	 \item The up detector never clicks.
+	\item the up detector clicks half of the time.
+	\item the up detector clicks all the time.
+	\item Can not say.
+}\end{enumerate}
+\vs{0.5cm}
+\tans The first $SG_X$ makes $\usp_z = { 1 \over \sqrt{2} } \left( \usp_y + \dsp_y \right)$. Since the second $SG_X$ has opposite gradient, it recombines the states to $\usp_z$. The third \sg instrument imposes $\mathcal{O}(\hs_z)$ on the state, so the state is unaltered and we obtain 100\% clicks in the {\it up z} detector, making choice {\bf III} correct.
+\vs{1cm} 
+\hrule
+\vs{1cm}
+\andy: I disagree with the answer to the previous question. Since the first $SG_X$ splits $\usp_z$ into a spatially separated superposition of $\usp_x$ and $\dsp_x$, the second $SG_X$, which is simply imposing $\mathcal{O}(\hs_x)$ on the states, can not recombine them to $\usp_z$ again, as those states are eigenstates of the $\hs_x$ operator, and the initial interaction is irreversible.
+\vs{0.25cm} \newline
+\carol: No, when the first \sg instrument splits $\usp_z$ into $\usp_x$ and $\dsp_x$, the process is only a time evolution of the state, not a measurement. I think only measurements alter the states irreversibly. So we CAN do the inverse transform with an opposite $SG_X$ machine and recombine the states back to $\usp_z$.\vs{0.25cm}\newline
+\hrule
+\vs{1cm}
+\item Which of the following statements are correct?
+\begin{enumerate}[\bf I.]
+{
+	\item \andy is correct.
+	\item \carol is correct.
+	\item Both are correct.
+	\item Both are mistaken.
+}\end{enumerate}
+\vs{0.5cm}
+\tans \carol is correct. In the previous case, nowhere a measurement was made after passing the beam through the $SG_X$ apparatuses to determine the state in which the particle going through the devices were. Hence, the initial states were not altered, and it was a time evolution, but not a measurement.
+\vs{1cm}
+\newline
+\underline{{\bf P}reparation of states:}
+\vskip 4cm
+Consider the above setup, and choose which of the following states you shall obtain in the particle beam:
+\begin{enumerate}[\bf I.]
+{
+	\item $\dsp_z$.
+	\item $\usp_x$.
+	\item $\dsp_x$.
+	\item $ \rhalf \left ( \dsp_x + \usp_x \right)$.
+	\item ${1\over 2\sqrt{2}}\left(\usp_x + \dsp_x \right)$.
+}\end{enumerate}
+\vs{0.5cm}
+\tans Since the detector measures for $\dsp_x$, the moment the measurement is done, $\usp_z$ collapses to either $\usp_x$ or $\dsp_x$ with equal probability, and whenever $\dsp_x$ is found, it is trapped in the detector. So the obtained beam contains only $\usp_x$ states. So the answer is choice {\bf II}. \vs{0.2cm} \newline
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+       	Thus, we can produce pure states with the aid of a \sg apparatus.
+    }%
+}
+\vskip 1cm
+\item Consider the following setup:
+\vskip 4cm
+What do we obtain as the final state?
+\begin{enumerate}[\bf I.]
+{
+	\item $\usp_z$.
+	\item $\usp_x$.
+	\item $\dsp_x$.
+	\item $\dsp_y$.
+}\end{enumerate}
+\vskip 1cm
+\tans The answer is {\bf IV}, because of the reasons similar to the ones discussed in the previous problem.
+\vs{0.5cm}\newline \hrule \vs{0.25cm}
+Consider the following conversation between \andy and \carol: \vs{0.5cm} \newline
+\ta: The $\usp_z$ state is a linear superposition of $\usp_x$ and $\dsp_x$, and it is not an eigenstate of $\usp_x$. \newline
+\tp: Exactly, since $\hs_x$ and $\hs_z$ do not commute with each other, they are imcompatible operators and they do not have simultaneous eigenstates. \vskip 1cm
+\item Which of the following is true? 
+\begin{enumerate}[\bf I.]{
+    \item \andy is correct but \carol is wrong.
+    \item \andy is wrong but \carol is correct.
+    \item Both are wrong.
+    \item Both are correct.
+}\end{enumerate}
+\vs{0.5cm}
+\tans Both are correct.
+\vskip 1cm
+\item Consider the \sg set-up:
+\vskip 2cm
+What is the possible output of the $SG_X$?
+\begin{enumerate}[\bf I.]{
+    \item {\vskip 2cm}
+    \item {\vskip 2cm}
+    \item \none
+}\end{enumerate}
+\vs{0.5cm}
+\tans This \sg instrument will produce $\usp_x$ and $\dsp_x$ states, with equal probability. Hence, the answer is {\bf I}.
+\vskip 1cm
+\item Consider the following setup:
+\vskip 2cm
+What is the output in this case?
+\begin{enumerate}[\bf I.]{
+    \item $\usp_x$ and $\dsp_x$.
+    \item $\usp_x$ only.
+    \item $\dsp_x$ only.
+    \item $\usp_z$ only.
+}\end{enumerate}
+\vs{0.5cm}
+\tans The answer is {\bf II}. The detector detects the $\dsp_x$ states, so only $\usp_x$ states enter the second \sg instrument. Since $\usp_x$ is an eigenstate of the evolution operator imposed due to the second \sg instrument, the state is unaltered after passing through the instrument, and we obtain $\usp_x$ as the final state.
+\vskip 1cm
+\item Consider the following setup and select the right output:
+\vskip 2cm
+\begin{enumerate}[\bf I.]{
+    \item $\usp_x$.
+    \item $\usp_z$ and $\dsp_z$.
+    \item $\usp_x$ and $\dsp_x$.
+    \none
+}\end{enumerate}
+\vs{0.5cm}
+\tans The correct answer is {\bf III}. The first $SG_X$ instrument splits the incident $\usp_z$ beam into $\usp_x$ and $\dsp_x$ beams with half intensity of the initial beam for each. The $\dsp_x$ state is blocked in the detector, so certainly the $\usp_x$ state enters the second \sg instrument, which imposes an evolution operator to which $\usp_x$ is an eigenstate, so the beam leaves this instrument unaltered in state, and the final $SG_Z$ apparatus splits the incident $\usp_x$ beam equally into $\usp_z$ and $\dsp_z$, with 25\% of the intensity of the actual $\usp_z$ beam each.
+\vskip 1cm
+\item Now consider a silver atom beam in a spin state $\stt{\chi} = a \usp_z + b \dsp_z$, with $a^2 + b^2 = 1$ incident on the $-SG_Z$ apparatus. Then which of the following is true?
+\begin{enumerate}[\bf I.]{
+    \item The up detector clicks 100\% of the time.
+    \item The up detector clicks 50\% of the time, and the down detector clicks 50\% of the time.
+    \item The down detector clicks 100\% of the time.
+    \item The up detector clicks $100a^2$\% of the time and the down detector clicks $100b^2$\% of the time.
+}\end{enumerate}
+\vs{0.5cm}
+\tans The correct answer is {\bf IV}. The probability of getting $\usp_z$ from $\stt{\chi}$ is $a^2$, so percentage wise  it gives $100a^2$, similarly it turns out as $100b^2$ for $\dsp_z$.
+\vskip 1cm
+\item Consider the following setup:
+\vskip 2cm
+The output is:
+\begin{enumerate}[\bf I.]{
+    \item $\usp_z$.
+    \item $\dsp_z$.
+    \item $\usp_z$ and $\dsp_z$.
+    \item \none
+}\end{enumerate}
+\vs{0.5cm}
+\tans The correct choice is {\bf I}. The detector blocks the $\dsp_z$, so a pure $\usp_z$ state is produced. This can be extended to more general cases as well.
+\end{enumerate}
+\hrule
+\newpage
+{\bf Do it yourself:} \newline
+\vskip 1cm
+Consider the \sg setup with silver atoms in the $\usp_y$ state, and determine the outcome. Also give adequate explanation:
+\end{document}

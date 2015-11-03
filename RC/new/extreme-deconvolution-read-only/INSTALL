@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Quick-install guide for the extreme-deconvolution library
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For more info, see the README file.
+
+Run
+
+make
+	
+     to compile the library into build/extremedeconvolution.so
+
+sudo make install
+
+     to copy the library to /usr/local/lib/. Use 'make install
+     INSTALL_DIR=/path/to/install/dir/' to install in a different
+     directory.
+
+make idlwrapper
+
+     to install the IDL wrapper. Add
+     'INSTALL_DIR=/path/to/install/dir/' if this was used to install
+     the library.
+
+make pywrapper
+
+     to install the python wrapper. Add
+     'INSTALL_DIR=/path/to/install/dir/' if this was used to install
+     the library.
+
+make testidl
+
+     to test the installation and IDL wrapper. IDL and the IDL wrapper
+     need to be installed for this to run. If your IDL installation is
+     not 'idl', pass the variable IDL=/your/idl/bin
+
+make testpy
+
+     to test the installation and Python wrapper. Python and the python wrapper
+     need to be installed for this to run. If your Python installation is
+     not 'python', pass the variable PYTHON=/your/python/bin
+
+make clean
+
+     to clean up intermediate object (*.o) files.
+
+make spotless:
+     
+     to return the directory to its initial state

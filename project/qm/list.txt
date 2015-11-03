@@ -1,0 +1,9 @@
+title					status
+==============================================================================
+Understanding product space	done
+Basics of spin half system	draft made, yet to be done fully on latex (large)
+Quantum Safe Key Distro	done	(medium)
+Grover's Algo			untouched (small)
+Stern Gerlach			untouched (huge)
+Basics of Quantum Computation	untouched (moderate)
+Clebsch Gordon Coefficient		untouched (huge)

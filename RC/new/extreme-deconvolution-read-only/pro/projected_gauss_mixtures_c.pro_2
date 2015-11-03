@@ -1,0 +1,15 @@
+                       "proj_gauss_mixtures_IDL", $
+                       ydata, ycovar, projection, logweights, ndata, ndimy, $
+                       amp, xmean, xcovar, ndimx, ngauss, $
+                       fixamp_temp, fixmean_temp, fixcovar_temp, $
+                       avgloglikedata, tol, maxiter, likeonly, $
+                       wmin,clog,n_clog,splitnmerge, clog2,n_clog2, $
+		       noprojection,diagerrors,noweight,$
+                       /CDECL,/AUTO_GLUE,VALUE=value)
+
+IF ~keyword_set(quiet) THEN splog, "Successfully ran the C-code"
+
+
+;stop
+
+end

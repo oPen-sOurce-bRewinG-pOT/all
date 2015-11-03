@@ -1,0 +1,8 @@
+set xrange [800:1200]
+#set logscale y
+plot "1000_0.0.dat" w lp
+replot "1000_0.2.dat" w lp
+#replot "100_0.4.dat" w lp
+#replot "100_0.6.dat" w lp
+#replot "1000_0.8.dat" w lp
+pause -1

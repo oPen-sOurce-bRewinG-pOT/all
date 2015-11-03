@@ -1,0 +1,2 @@
+VAR=0
+do for [VAR=0:199:1] {plot "$(VAR).dat" u ($1-$2):2 w l; pause -1}
